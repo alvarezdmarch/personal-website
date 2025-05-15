@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Bio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-end; /* Right-aligned navigation */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 60px 0;
+            gap: 80px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+        }
+
+        .profile-info {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .profile-info h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .profile-info h2 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #b0b0b0;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            padding-left: 0.5rem;
+        }
+
+        .right-column {
+            max-width: 700px;
+        }
+
+        .bio p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            margin-top: 0.75rem;
+        }
+
+        .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        align-items: center;
+        padding-top: 2rem;
+        }
+        .skills-list img {
+            width: 82px;
+            height: 82px;
+            transition: transform 0.2s ease;
+        }
+        .skills-list img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Social section */
+        .social-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        /* Portfolio Button - Matches social icons */
+        .portfolio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: transparent;
+            color: #e0e0e0;
+            border: 1px solid #333;
+            padding: 10px 60px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.2s ease, transform 0.2s ease;
+        }
+
+        .portfolio-button:hover {
+            color: #fff;
+            border-color: #555;
+            transform: scale(1.01);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2.15rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #333;
+            color: #e0e0e0;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.2s ease, transform 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            border-color: #555;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .left-column, .right-column {
+                max-width: 100%;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <div class="left-column">
+                <div class="profile-info">
+                    <h1>Marcelo Álvarez</h1>
+                    <h2>Architect</h2>
+                    <h4>Computational Designer</h4>
+                </div>
+                <img src="/resources/profilepicture.jpg" alt="Profile Picture" class="profile-image">
+                <p style="font-weight: 250; padding-top: 1.5rem; padding-left: 2rem; font-size: small;">M.S. in Design Computation, Georgia Institute of Technology</p>
+                <p style="font-weight: 250; padding-top: 0.75rem; padding-left: 2rem; font-size: small;">Professional degree in Architecture, Universidad Técnica Federico Santa María</p>
+            </div>
+            <div class="right-column">
+                <div class="bio">
+                    <p>
+                        I have a professional degree in Architecture, specialized in computational design with experience in the industry and the academia.
+                        I am currently a M.S. in Design Computation graduate student at the Georgia Institute of Technology. My interest focuses on data-driven methods
+                        for architecture and design in general. I have the skills and experience to develop architectural projects at all stages, integrating
+                        specialized skills in design scripting, parametric modeling, custom tool, development, and data analytics.
+                    </p>
+                    <p>
+                        I have been working as a Graduate Research Assistant at the Georgia Tech Research Institute (GTRI) researching and developing advanced 
+                        computational design methods for Building Information Modeling (BIM) and Computational Fluid Dynamics (CFD). I have also been a Teaching Assistant 
+                        for the Vertically Integrated Project (VIP) Resilient and Healthy Buildings at Georgia Tech. Additionally, I am currently involved in the development of
+                        <a href="https://docs.eddy3d.com/outdoor%2B/" style="color: #fff; font-weight: bold;">Outdoor+</a>, a Grasshopper plugin using the urbanMicroclimateFoam solver from ETH Zurich.
+                    </p>
+                    <h3>Skills</h3>
+                    <div class="skills-list">
+                            <img src="/resources/grasshopper.png" alt="Grasshopper">
+                            <img src="/resources/python.png" alt="Python">
+                            <img src="/resources/revit.png" alt="Revit">
+                            <img src="/resources/rhino.png" alt="Rhinoceros">
+                            <img src="/resources/csharp.png" alt="Rhinoceros">
+                            <img src="/resources/adobe.png" alt="Rhinoceros">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <!-- Portfolio Button - Now matches social icons -->
+            <a href="#" class="portfolio-button">
+            Portfolio
+            </a>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/marcelo-%C3%A1lvarez-a9253717a/" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/alvarezdmarch" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

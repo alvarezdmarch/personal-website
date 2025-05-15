@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Personal Bio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 20rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        /* Publications Content */
+        .publications-content {
+            padding: 60px 0;
+        }
+
+        .page-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .publication-list {
+            list-style: none;
+        }
+
+        .publication-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #222;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .publication-authors {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        .publication-journal {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .publication-year {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .publication-abstract {
+            margin-bottom: 15px;
+        }
+
+        .publication-link {
+            display: inline-block;
+            color: #e0e0e0;
+            text-decoration: none;
+            border-bottom: 1px solid #555;
+            transition: all 0.2s;
+        }
+
+        .publication-link:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* Social section */
+        .social-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        /* Portfolio Button */
+        .portfolio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: transparent;
+            color: #e0e0e0;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .portfolio-button:hover {
+            color: #fff;
+            border-color: #555;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #333;
+            color: #e0e0e0;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            border-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Publications Content -->
+    <div class="container">
+        <div class="publications-content">
+            <h1 class="page-title">Publications</h1>
+            
+            <ul class="publication-list">
+                <!-- Publication 1 -->
+                <li class="publication-item">
+                    <h2 class="publication-title">A Review of a Spatiotemporal Integration Framework for Built Environments: Coupling of Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS)</h2>
+                    <p class="publication-authors">Alvarez, M., Gomez, P.</p>
+                    <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
+                    <p class="publication-year">Abstract accepted</p>
+                </li>
+                
+                <!-- Publication 2 -->
+                <li class="publication-item">
+                    <h2 class="publication-title">Design Spaces of Structurally Pre-evaluated Funicular Shapes</h2>
+                    <p class="publication-authors">Alvarez, M., Bernal, M.</p>
+                    <p class="publication-journal">SIGraDi 2021: Designing Possibilities</p>
+                    <p class="publication-year">2021</p>
+                    <p class="publication-abstract">
+                        In this paper, we develop a structural pre-evaluation and optimization
+                        technique for vault-like shapes. This implementation focuses on exploring design spaces
+                        in early design stages. The proposed technique approaches the problem of reducing the
+                        flexibility of the design space while advancing to later design stages for vault-like shapes.
+                        We start with a custom design space based on design intent. Then, we define a sampling
+                        criteria to study a reduced number of candidates. Later, the optimization process focuses
+                        on minimizing structural deformation values through shape manipulation. Results show
+                        a notorious enhancement for maximum deflection and displacement of the structure.
+                        Generally speaking, the shape optimization pattern is consistent with how vault-like
+                        shape works. All solutions reduce their span and boundary area while increasing the
+                        maximum height. Also, reaching maximum deformation values that are ten times better
+                        than the admissible final values on average.
+                    </p>
+                    <a href="https://www.researchgate.net/profile/Marcelo-Alvarez-11/publication/356973150_Design_Spaces_of_Structurally_Pre-evaluated_Funicular_Shapes/links/61b523ccfd2cbd720093b1c6/Design-Spaces-of-Structurally-Pre-evaluated-Funicular-Shapes.pdf" class="publication-link">View Publication</a>
+                </li>
+                
+                <!-- Publication 3 -->
+                <li class="publication-item">
+                    <h2 class="publication-title">Modeling technique for vault-like structure generation through topological manipulation</h2>
+                    <p class="publication-authors">Alvarez, M., Bernal, M., Castro, C.</p>
+                    <p class="publication-journal">SIGraDi 2020: Transformative Design</p>
+                    <p class="publication-year">2020</p>
+                    <p class="publication-abstract">
+                        This study is based on the development of a modeling technique for vault-like structure
+                        generation through topological manipulation. Currently, topology-driven form-finding has been
+                        implemented in tensile structures, but no further studies have been conducted for
+                        compression-only structures. The focus of this study is to approach the problem of highly
+                        determined vault shapes by their input topology. The technique operates at the topological
+                        level between vertices and edges to create an input 2D topology map. The particle-spring
+                        system uses such a map to simulate the resulting 3D mesh geometry. For testing purposes,
+                        we explore three generative approaches. The results show the effectiveness of the technique
+                        to manipulate the topological relationships that controls the generation of the funicular
+                        structures.
+                    </p>
+                    <a href="https://pdf.blucher.com.br/designproceedings/sigradi2020/33.pdf" class="publication-link">View Publication</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="social-section">
+            <!-- Portfolio Button -->
+            <a href="#" class="portfolio-button">
+                <i class="fas fa-briefcase"></i> View My Portfolio
+            </a>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:your.email@example.com" aria-label="Email Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle active navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

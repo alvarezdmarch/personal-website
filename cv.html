@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Personal Bio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 20rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        /* CV Content */
+        .cv-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+        }
+
+        .entry {
+            margin-bottom: 25px;
+        }
+
+        .entry-title {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .entry-subtitle {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 5px;
+        }
+
+        .entry-date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .entry-description {
+            font-size: 16px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .skill-item {
+            padding: 5px 10px;
+            border: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Social section */
+        .social-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        /* Portfolio Button */
+        .portfolio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: transparent;
+            color: #e0e0e0;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .portfolio-button:hover {
+            color: #fff;
+            border-color: #555;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #333;
+            color: #e0e0e0;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            border-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills-list {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CV Content -->
+    <div class="container">
+        <div class="cv-content">
+            <!-- Education Section -->
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="entry">
+                    <h3 class="entry-title">M.S. in Design Computation</h3>
+                    <h4 class="entry-subtitle">Georgia Institute of Technology</h4>
+                    <div class="entry-date">2024 - 2025</div>
+                    <p class="entry-description">Courses: Introduction to Analytics Modeling, Revit, Healthcare Design of the Future, VIP: Surrogate Models for Urban Regeneration,
+                        Data-driven Methods in Design and Sustainability, Building Simulation in Design Practice, Public Health Analytics. 
+                    </p>
+                </div>
+                
+                <div class="entry">
+                    <h3 class="entry-title">Architect</h3>
+                    <h4 class="entry-subtitle">Universidad Técnica Federico Santa María</h4>
+                    <div class="entry-date">2013 - 2020</div>
+                    <p class="entry-description">Undergrad studies where I obtained a professional degree in architecture.</p>
+                </div>
+            </div>
+            
+            <!-- Experience Section -->
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="entry">
+                    <h3 class="entry-title">Graduate Research Assistant</h3>
+                    <h4 class="entry-subtitle">Georgia Tech Research Institute</h4>
+                    <div class="entry-date">2024 - Present</div>
+                    <p class="entry-description">• Development of authoring scripting solutions using IfcOpenShell library to read and manipulate BIM/IFC models in Revit combined with Rhino.Inside.Revit.</p>
+                    <p class="entry-description">• Running, analyzing and programming of post-processing tools for indoor CFD simulations using OpenFOAM and Grasshopper tools.</p>
+                    <p class="entry-description">• Teaching Assistant of the VIP: Resilient and Healthy Buildings, conducting research on CFD and ABS while providing technical assistance to students.</p>
+                </div>
+                
+                <div class="entry">
+                    <h3 class="entry-title">Architect</h3>
+                    <h4 class="entry-subtitle">Social Arquitectura</h4>
+                    <div class="entry-date">2024</div>
+                    <p class="entry-description">• Design of house proposal in response to a conflagration in the city, approved by the community.</p>
+                    <p class="entry-description">• Project modeling using Revit and Rhinoceros, documentation, rendering with Twinmotion, and post-production with Adobe Photoshop.</p>
+                    <p class="entry-description">• Project presentation to involved communities consisting of 50+ people.</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Architect</h3>
+                    <h4 class="entry-subtitle">Delnor Engineering</h4>
+                    <div class="entry-date">2023 - 2024</div>
+                    <p class="entry-description">• Architectural design aligned with engineering and coding requirements.</p>
+                    <p class="entry-description">• Project modeling, documentation, and rendering using Revit and Rhinoceros.</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Additional work</h3>
+                    <div class="entry-date">2023 - 2024</div>
+                    <p class="entry-description">• Development of visualization components for Outdoor+, a Grasshopper plugin for Urban Microclimate simulations.</p>
+                    <p class="entry-description">• Development of custom Grasshopper scripts for Design Space Exploration and Climate Simulations</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Research</h2>   
+                <div class="entry">             
+                    <h3 class="entry-title">SIGraDi 2025</h3>
+                    <p class="entry-description" style="padding-bottom: 1rem;">A Review of a Spatiotemporal Integration Framework for Built Environments: Coupling of Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) (Abstract accepted)</p>
+                    <h3 class="entry-title">SIGraDi 2021</h3>
+                    <p class="entry-description" style="padding-bottom: 1rem;">Álvarez, M., & Bernal, M. (2021, November). Design spaces of structurally pre-evaluated funicular shapes. In Proceedings of XXV International Conference of the Iberoamerican Society of Digital Graphics (Vol. 9, pp. 807-878). São Paulo, Brazil: Blucher.</p>
+                    <h3 class="entry-title">SIGraDi 2020</h3>
+                    <p class="entry-description">Álvarez, Marcelo; Bernal, Marcelo; Castro, Carlos; "Modeling technique for vault-like structure generation through topological manipulation", p. 238-245 . In: Congreso SIGraDi 2020. São Paulo: Blucher, 2020.
+                        ISSN 2318-6968, DOI 10.5151/sigradi2020-33</p>
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="section">
+                <h2 class="section-title">Technical skills</h2>
+                
+                <ul class="skills-list">
+                    <li class="skill-item">Revit</li>
+                    <li class="skill-item">Rhinoceros</li>
+                    <li class="skill-item">Grasshopper</li>
+                    <li class="skill-item">Python</li>
+                    <li class="skill-item">C#</li>
+                    <li class="skill-item">Adobe Suite</li>
+                    <li class="skill-item">Twinmotion</li>
+                    <li class="skill-item">Microsoft Excel</li>
+                    <li class="skill-item">OpenFOAM</li>
+                    <li class="skill-item">ENVI-met</li>
+                    <li class="skill-item">ArcGIS</li>
+                    <li class="skill-item">R</li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-section">
+            <!-- Portfolio Button -->
+            <a href="#" class="portfolio-button">
+                <i class="fas fa-briefcase"></i> View My Portfolio
+            </a>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:your.email@example.com" aria-label="Email Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle active navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
