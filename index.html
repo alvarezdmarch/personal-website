@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Bio</title>
+    <title>Marcelo Alvarez, Arch & Comp. Design</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            line-height: 1.6;
+            line-height: 1.5;
             color: #e0e0e0;
             background-color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .container {
             margin: 0 auto;
             padding: 0 4rem;
         }
-
+        
         /* Navigation */
         nav {
             padding: 20px 0;
@@ -45,11 +46,29 @@
             text-decoration: none;
             color: #e0e0e0;
             font-size: 16px;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6d0000;
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #ffffff;
+        }
+
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
         }
 
         /* Main Content */
@@ -57,29 +76,41 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding: 60px 0;
-            gap: 80px;
+            padding: 3rem 0;
+            gap: 5rem;
         }
 
         .left-column {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            max-width: 300px;
+            align-items: flex-start;
+            max-width: 20rem;
         }
 
         .profile-info {
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
 
         .profile-info h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 32px;
+            margin-bottom: 0.5rem;
             color: #ffffff;
+            align-items: left;
+            letter-spacing: 0.5px;
         }
 
         .profile-info h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #6d0000;
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-info h4 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 18px;
             font-weight: 400;
             color: #b0b0b0;
@@ -89,34 +120,117 @@
             width: 250px;
             height: 250px;
             object-fit: cover;
-            padding-left: 0.5rem;
+            padding-left: 0rem;
+            transition: filter 0.5s ease;
         }
 
         .right-column {
-            max-width: 700px;
+            max-width: 45rem;
         }
 
         .bio p {
             font-size: 16px;
             line-height: 1.5;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             margin-top: 0.75rem;
         }
 
-        .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        align-items: center;
-        padding-top: 2rem;
+        .bio h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
+
+        .bio h3:after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #6d0000;
+        }
+
+        .bio a {
+            color: #6d0000;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .bio a:hover {
+            color: #ffffff;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            padding-top: 1.5rem;
+        }
+        
+        .skill-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        
         .skills-list img {
             width: 82px;
             height: 82px;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            filter: grayscale(20%);
+            border: 2px solid transparent;
         }
-        .skills-list img:hover {
-            transform: scale(1.05);
+        
+        .skill-item:hover img {
+            transform: translateY(-5px);
+            filter: grayscale(0%);
+            border-color: #6d0000;
+        }
+
+        .skill-info {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background-color: rgba(10, 10, 10, 0.95);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #6d0000;
+            z-index: 100;
+            width: max-content;
+            max-width: 500px;
+        }
+        
+        .skill-item:hover .skill-info {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .skill-info:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #6d0000 transparent transparent transparent;
         }
 
         /* Social section */
@@ -136,17 +250,34 @@
             background-color: transparent;
             color: #e0e0e0;
             border: 1px solid #333;
-            padding: 10px 60px;
+            padding: 12px 60px;
             font-size: 16px;
+            font-weight: 500;
             text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.2s ease, transform 0.2s ease;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .portfolio-button:hover {
             color: #fff;
-            border-color: #555;
-            transform: scale(1.01);
+            border-color: #6d0000;
+        }
+
+        .portfolio-button:hover:before {
+            left: 0;
         }
 
         /* Social Icons */
@@ -167,13 +298,29 @@
             color: #e0e0e0;
             font-size: 18px;
             text-decoration: none;
-            transition: all 0.2s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icons a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .social-icons a:hover {
             color: #fff;
-            border-color: #555;
-            transform: scale(1.05);
+            border-color: #6d0000;
+        }
+
+        .social-icons a:hover:before {
+            left: 0;
         }
 
         /* Responsive Design */
@@ -189,6 +336,10 @@
 
             .nav-links {
                 gap: 20px;
+            }
+            
+            .skill-info {
+                max-width: 150px;
             }
         }
     </style>
@@ -216,8 +367,8 @@
                     <h4>Computational Designer</h4>
                 </div>
                 <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/profilepicture.jpg" alt="Profile Picture" class="profile-image">
-                <p style="font-weight: 250; padding-top: 1.5rem; padding-left: 2rem; font-size: small;">M.S. in Design Computation, Georgia Institute of Technology</p>
-                <p style="font-weight: 250; padding-top: 0.75rem; padding-left: 2rem; font-size: small;">Professional degree in Architecture, Universidad Técnica Federico Santa María</p>
+                <p style="font-weight: 300; padding-top: 1.5rem; font-size: small;">M.S. in Design Computation, Georgia Institute of Technology</p>
+                <p style="font-weight: 300; padding-top: 0.75rem; font-size: small;">Professional degree in Architecture, Universidad Técnica Federico Santa María</p>
             </div>
             <div class="right-column">
                 <div class="bio">
@@ -231,25 +382,43 @@
                         I have been working as a Graduate Research Assistant at the Georgia Tech Research Institute (GTRI) researching and developing advanced 
                         computational design methods for Building Information Modeling (BIM) and Computational Fluid Dynamics (CFD). I have also been a Teaching Assistant 
                         for the Vertically Integrated Project (VIP) Resilient and Healthy Buildings at Georgia Tech. Additionally, I am currently involved in the development of
-                        <a href="https://docs.eddy3d.com/outdoor%2B/" style="color: #fff; font-weight: bold;">Outdoor+</a>, a Grasshopper plugin using the urbanMicroclimateFoam solver from ETH Zurich.
+                        <a href="https://docs.eddy3d.com/outdoor%2B/" style="color: #6d0000; font-weight: bold;">Outdoor+</a>, a Grasshopper plugin using the urbanMicroclimateFoam solver from ETH Zurich.
                     </p>
                     <h3>Skills</h3>
                     <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">Grasshopper: Parametric design and algorithmic modeling</div>
                             <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/grasshopper.png" alt="Grasshopper">
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/revit.png" alt="Python">
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/python.png" alt="Revit">
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/csharp.png" alt="Rhinoceros">
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">Revit: Building Information Modeling (BIM)</div>
+                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/revit.png" alt="Revit">
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">Python: Programming for computational design & data analytics</div>
+                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/python.png" alt="Python">
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">C#: Advanced plugin development and computational tools</div>
+                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/csharp.png" alt="C#">
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">Rhinoceros: 3D modeling and digital fabrication</div>
                             <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/rhino.png" alt="Rhinoceros">
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/adobe.png" alt="Rhinoceros">
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">Adobe Creative Suite: Visual communication and design</div>
+                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/adobe.png" alt="Adobe">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="social-section">
-            <!-- Portfolio Button - Now matches social icons -->
+            <!-- Portfolio Button -->
             <a href="https://www.alvarezdm.me/portfolio2/" class="portfolio-button">
-            Portfolio
+                Portfolio
             </a>
 
             <!-- Social Icons -->
