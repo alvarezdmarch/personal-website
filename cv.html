@@ -1,29 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Personal Bio</title>
+    <title>CV | Marcelo Alvarez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            line-height: 1.6;
+            line-height: 1.5;
             color: #e0e0e0;
             background-color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .container {
             margin: 0 auto;
-            padding: 0 20rem;
+            padding: 0 4rem;
         }
-
+        
         /* Navigation */
         nav {
             padding: 20px 0;
@@ -32,7 +34,7 @@
 
         .nav-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-end; /* Right-aligned navigation */
         }
 
         .nav-links {
@@ -45,67 +47,157 @@
             text-decoration: none;
             color: #e0e0e0;
             font-size: 16px;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6d0000;
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #ffffff;
         }
 
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+
         /* CV Content */
         .cv-content {
-            padding: 60px 0;
+            padding: 3rem 0;
+            max-width: 65rem;
+            margin: 0 auto;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
         }
 
         .section-title {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 22px;
             color: #ffffff;
-            border-bottom: 1px solid #222;
-            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #6d0000;
         }
 
         .entry {
-            margin-bottom: 25px;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(34, 34, 34, 0.3);
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .entry-title {
+            font-family: 'Raleway', sans-serif;
             font-size: 18px;
             color: #ffffff;
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .entry-subtitle {
             font-size: 16px;
-            color: #b0b0b0;
-            margin-bottom: 5px;
+            color: #6d0000;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .entry-date {
             font-size: 14px;
-            color: #888;
-            margin-bottom: 10px;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+            font-style: italic;
         }
 
         .entry-description {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .entry-description ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .entry-description li {
+            margin-bottom: 0.25rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background-color: rgba(34, 34, 34, 0.3);
+            padding: 1.5rem;
+            border: 1px solid rgba(109, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: #6d0000;
+            background-color: rgba(109, 0, 0, 0.1);
+        }
+
+        .skill-category-title {
+            font-family: 'Raleway', sans-serif;
             font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.5rem;
             list-style: none;
         }
 
         .skill-item {
-            padding: 5px 10px;
-            border: 1px solid #333;
-            font-size: 14px;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(109, 0, 0, 0.1);
+            border: 1px solid rgba(109, 0, 0, 0.3);
+            color: #e0e0e0;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            background-color: rgba(109, 0, 0, 0.2);
+            border-color: #6d0000;
+            color: #ffffff;
         }
 
         /* Social section */
@@ -113,12 +205,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 40px;
-            padding-top: 40px;
+            margin-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid #222;
         }
 
-        /* Portfolio Button */
+        /* Portfolio Button - Matches main page */
         .portfolio-button {
             display: flex;
             align-items: center;
@@ -127,23 +219,41 @@
             background-color: transparent;
             color: #e0e0e0;
             border: 1px solid #333;
-            padding: 10px 20px;
+            padding: 12px 60px;
             font-size: 16px;
+            font-weight: 500;
             text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.2s;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .portfolio-button:hover {
             color: #fff;
-            border-color: #555;
+            border-color: #6d0000;
+        }
+
+        .portfolio-button:hover:before {
+            left: 0;
         }
 
         /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 2.15rem;
         }
 
         .social-icons a {
@@ -157,19 +267,51 @@
             color: #e0e0e0;
             font-size: 18px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icons a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .social-icons a:hover {
             color: #fff;
-            border-color: #555;
+            border-color: #6d0000;
+        }
+
+        .social-icons a:hover:before {
+            left: 0;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .skills-list {
-                flex-direction: column;
-                gap: 5px;
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .cv-content {
+                padding: 2rem 0;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-icons {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -182,7 +324,7 @@
                 <li><a href="index.html">About</a></li>
                 <li><a href="cv.html" class="active">CV</a></li>
                 <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <!-- <li><a href="projects.html">Projects</a></li> -->
             </ul>
         </div>
     </nav>
@@ -199,72 +341,140 @@
                     <h4 class="entry-subtitle">Georgia Institute of Technology</h4>
                     <div class="entry-date">2024 - 2025</div>
                     <p class="entry-description">Courses: Introduction to Analytics Modeling, Revit, Healthcare Design of the Future, VIP: Surrogate Models for Urban Regeneration,
-                        Data-driven Methods in Design and Sustainability, Building Simulation in Design Practice, Public Health Analytics. 
+                        Data-driven Methods in Design and Sustainability, Building Simulation in Design Practice, Public Health Analytics, Shape Grammars.
                     </p>
                 </div>
                 
                 <div class="entry">
-                    <h3 class="entry-title">Architect</h3>
+                    <h3 class="entry-title">Professional Degree in Architecture</h3>
+                    <h4 class="entry-subtitle">Universidad Técnica Federico Santa María</h4>
+                    <div class="entry-date">2019 - 2020</div>
+                    <p class="entry-description">Undergraduate thesis: Modeling technique for vault-like structure generation through topological manipulation</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Bachelor of Science in Architecture</h3>
                     <h4 class="entry-subtitle">Universidad Técnica Federico Santa María</h4>
                     <div class="entry-date">2013 - 2020</div>
-                    <p class="entry-description">Undergrad studies where I obtained a professional degree in architecture.</p>
                 </div>
             </div>
             
             <!-- Experience Section -->
             <div class="section">
                 <h2 class="section-title">Professional Experience</h2>
+
+                <div class="entry">
+                    <h3 class="entry-title">Graduate Research Assistant</h3>
+                    <h4 class="entry-subtitle">Georgia Tech Research Institute</h4>
+                    <div class="entry-date">August 2025 - Present</div>
+                    <p class="entry-description">• Urban Vulnerability Modeling and Simulation Platform project.</p>
+                    <p class="entry-description">• Assisted in teaching the VIP: Computing Building Resiliency course, conducting research on CFD and ABS and providing technical support to students.</p>
+                </div>
+                
+                <div class="entry">
+                    <h3 class="entry-title">Corporate Research Intern</h3>
+                    <h4 class="entry-subtitle">Perkins&Will</h4>
+                    <div class="entry-date">May 2025 - August 2025</div>
+                    <p class="entry-description">• Conducted comparative research on urban microclimate simulations, validating Outdoor+, a Grasshopper plugin using the urbanMicroclimateFoam solver, testing results against ENVI-met models.</p>
+                    <p class="entry-description">• Developed advanced ENVI-met microclimate models to identify thermal comfort issues in an Educational Center project, providing design input for the architecture team.</p>
+                </div>
                 
                 <div class="entry">
                     <h3 class="entry-title">Graduate Research Assistant</h3>
                     <h4 class="entry-subtitle">Georgia Tech Research Institute</h4>
-                    <div class="entry-date">2024 - Present</div>
-                    <p class="entry-description">• Development of authoring scripting solutions using IfcOpenShell library to read and manipulate BIM/IFC models in Revit combined with Rhino.Inside.Revit.</p>
-                    <p class="entry-description">• Running, analyzing and programming of post-processing tools for indoor CFD simulations using OpenFOAM and Grasshopper tools.</p>
-                    <p class="entry-description">• Teaching Assistant of the VIP: Resilient and Healthy Buildings, conducting research on CFD and ABS while providing technical assistance to students.</p>
+                    <div class="entry-date">August 2024 - May 2025</div>
+                    <p class="entry-description">• Developed scripting solutions with IfcOpenShell to read and manipulate BIM/IFC models in Revit through Rhino.Inside.Revit.</p>
+                    <p class="entry-description">• Programmed post-processing tools and analyzed results for indoor CFD simulations using OpenFOAM and Grasshopper.</p>
+                    <p class="entry-description">• Assisted in teaching the VIP: Computing Building Resiliency course, conducting research on CFD and ABS and providing technical support to students.</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Special Projects</h3>
+                    <div class="entry-date">August 2024 - May 2025</div>
+                    <p class="entry-description">• Developed custom components for Outdoor+, a Grasshopper plugin for urban microclimate simulations, as part of the VIP Surrogate Models for Urban Regeneration project.</p>
+                    <p class="entry-description">• Created custom Grasshopper scripts for design space exploration and EnergyPlus-based climate simulations.</p>
                 </div>
                 
                 <div class="entry">
                     <h3 class="entry-title">Architect</h3>
                     <h4 class="entry-subtitle">Social Arquitectura</h4>
-                    <div class="entry-date">2024</div>
-                    <p class="entry-description">• Design of house proposal in response to a conflagration in the city, approved by the community.</p>
-                    <p class="entry-description">• Project modeling using Revit and Rhinoceros, documentation, rendering with Twinmotion, and post-production with Adobe Photoshop.</p>
-                    <p class="entry-description">• Project presentation to involved communities consisting of 50+ people.</p>
+                    <div class="entry-date">March 2024 - July 2024</div>
+                    <p class="entry-description">• Designed a housing proposal in response to a citywide conflagration, approved by the local community.</p>
+                    <p class="entry-description">• Modeled projects in Revit and Rhinoceros, producing documentation, renderings in Twinmotion, and post-production in Adobe Photoshop.</p>
+                    <p class="entry-description">• Presented project outcomes to community groups of 50+ participants.</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Faculty Assistant</h3>
+                    <h4 class="entry-subtitle">Universidad Adolfo Ibañez</h4>
+                    <div class="entry-date">March 2023 - March 2024</div>
+                    <p class="entry-description">• Managed databases and generated dashboards to support decision-making in the Engineering Faculty.</p>
+                    <p class="entry-description">• Assisted students by addressing academic inquiries and guiding coursework.</p>
+                    <p class="entry-description">• Graded professional practice reports.</p>
                 </div>
 
                 <div class="entry">
                     <h3 class="entry-title">Architect</h3>
-                    <h4 class="entry-subtitle">Delnor Engineering</h4>
-                    <div class="entry-date">2023 - 2024</div>
-                    <p class="entry-description">• Architectural design aligned with engineering and coding requirements.</p>
-                    <p class="entry-description">• Project modeling, documentation, and rendering using Revit and Rhinoceros.</p>
+                    <h4 class="entry-subtitle">Freelance</h4>
+                    <div class="entry-date">February 2022 - February 2023</div>
+                    <p class="entry-description">• Conducted on-site measurements, prepared permit documentation, and managed client paperwork to ensure regulatory compliance.</p>
+                    <p class="entry-description">• Collaborated on concept design, technical documentation, and 3D modeling for residential and commercial projects.</p>
                 </div>
 
                 <div class="entry">
-                    <h3 class="entry-title">Additional work</h3>
-                    <div class="entry-date">2023 - 2024</div>
-                    <p class="entry-description">• Development of visualization components for Outdoor+, a Grasshopper plugin for Urban Microclimate simulations.</p>
-                    <p class="entry-description">• Development of custom Grasshopper scripts for Design Space Exploration and Climate Simulations</p>
+                    <h3 class="entry-title">Professional Practice II</h3>
+                    <h4 class="entry-subtitle">Sociedad Constructora Villa Alemana Ltda.</h4>
+                    <div class="entry-date">January 2018 - March 2018</div>
+                    <p class="entry-description">• Executed on-site measurements and permitting documentation.</p>
+                    <p class="entry-description">• Managed client paperwork to ensure compliance.</p>
+                </div>
+
+                <div class="entry">
+                    <h3 class="entry-title">Professional Practice I</h3>
+                    <h4 class="entry-subtitle">Michell Consultores</h4>
+                    <div class="entry-date">January 2017 - March 2017</div>
+                    <p class="entry-description">• Assisted in preparing technical documentation and drawings for land lot development and subdivision projects.</p>
+                    <p class="entry-description">• Supported regulatory approval processes by compiling site data, maps, and compliance paperwork.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Research</h2>   
+                <h2 class="section-title">Publications</h2>   
                 <div class="entry">             
                     <h3 class="entry-title">SIGraDi 2025</h3>
-                    <p class="entry-description" style="padding-bottom: 1rem;">A Review of a Spatiotemporal Integration Framework for Built Environments: Coupling of Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) (Abstract accepted)</p>
+                    <p class="entry-description" style="padding-bottom: 1rem;">• Quantifying Airflow-Pathogen Dynamics: A CFD-ABS Approach to Optimizing Ventilation and Filtration Strategies (Accepted for publication)</p>
+                    <p class="entry-description" style="padding-bottom: 1rem;">• Spatiotemporal Modeling Integration Framework for Buildings: Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Assessment (Accepted for publication)</p>
+                    
+                    <h3 class="entry-title">Building and Environment 2025</h3>
+                    <p class="entry-description" style="padding-bottom: 1rem;">Rahimi, Sina, Marcelo Alvarez, Umberto Berardi, Brian Stone, and Patrick Kastner. "Coupled Urban Physics in Microclimate Modeling: Validating and Enhancing Simulation Tools." Building and Environment, September 2025, 113637.</p>
+                    
                     <h3 class="entry-title">SIGraDi 2021</h3>
-                    <p class="entry-description" style="padding-bottom: 1rem;">Álvarez, M., & Bernal, M. (2021, November). Design spaces of structurally pre-evaluated funicular shapes. In Proceedings of XXV International Conference of the Iberoamerican Society of Digital Graphics (Vol. 9, pp. 807-878). São Paulo, Brazil: Blucher.</p>
+                    <p class="entry-description" style="padding-bottom: 1rem;">Álvarez, Marcelo, and Marcelo Bernal. "Design Spaces of Structurally Pre-Evaluated Funicular Shapes." Blucher Design Proceedings, Editora Blucher, December 2021, 807–18.</p>
+                    
                     <h3 class="entry-title">SIGraDi 2020</h3>
-                    <p class="entry-description">Álvarez, Marcelo; Bernal, Marcelo; Castro, Carlos; "Modeling technique for vault-like structure generation through topological manipulation", p. 238-245 . In: Congreso SIGraDi 2020. São Paulo: Blucher, 2020.
-                        ISSN 2318-6968, DOI 10.5151/sigradi2020-33</p>
+                    <p class="entry-description">Álvarez, Marcelo, Marcelo Bernal, and Carlos Castro. "Modeling Technique for Vault-like Structure Generation through Topological Manipulation." Blucher Design Proceedings, Editora Blucher, December 2020, 238–45.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Honors and Awards</h2>
+                <div class="entry">
+                    <p class="entry-description">• ET SFP 2025 Scholarship – International Facility Management Association</p>
+                    <p class="entry-description">• GTRI Graduate Student Research Award nomination</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="entry">
+                    <p class="entry-description">• English: Professional proficiency</p>
+                    <p class="entry-description">• Spanish: Native</p>
                 </div>
             </div>
             
             <!-- Skills Section -->
             <div class="section">
-                <h2 class="section-title">Technical skills</h2>
+                <h2 class="section-title">Technical Skills</h2>
                 
                 <ul class="skills-list">
                     <li class="skill-item">Revit</li>
@@ -272,13 +482,14 @@
                     <li class="skill-item">Grasshopper</li>
                     <li class="skill-item">Python</li>
                     <li class="skill-item">C#</li>
+                    <li class="skill-item">ENVI-met</li>
                     <li class="skill-item">Adobe Suite</li>
                     <li class="skill-item">Twinmotion</li>
-                    <li class="skill-item">Microsoft Excel</li>
                     <li class="skill-item">OpenFOAM</li>
-                    <li class="skill-item">ENVI-met</li>
                     <li class="skill-item">ArcGIS</li>
+                    <li class="skill-item">AutoCAD</li>
                     <li class="skill-item">R</li>
+                    <li class="skill-item">Microsoft Excel</li>
                 </ul>
             </div>
         </div>

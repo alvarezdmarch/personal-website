@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Personal Bio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            line-height: 1.6;
+            line-height: 1.5;
             color: #e0e0e0;
             background-color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .container {
             margin: 0 auto;
-            padding: 0 20rem;
+            padding: 0 4rem;
         }
 
         /* Navigation */
@@ -32,7 +33,7 @@
 
         .nav-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-end; /* Right-aligned navigation */
         }
 
         .nav-links {
@@ -45,22 +46,44 @@
             text-decoration: none;
             color: #e0e0e0;
             font-size: 16px;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6d0000;
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #ffffff;
         }
 
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+
         /* Publications Content */
         .publications-content {
-            padding: 60px 0;
+            padding: 3rem 0;
+            max-width: 65rem;
+            margin: 0 auto;
         }
 
         .page-title {
-            font-size: 28px;
-            margin-bottom: 40px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 32px;
+            margin-bottom: 2rem;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         .publication-list {
@@ -68,53 +91,78 @@
         }
 
         .publication-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #222;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(34, 34, 34, 0.5);
         }
 
         .publication-item:last-child {
             border-bottom: none;
+            padding-bottom: 0;
         }
 
         .publication-title {
+            font-family: 'Raleway', sans-serif;
             font-size: 20px;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            line-height: 1.3;
         }
 
         .publication-authors {
             font-size: 16px;
-            color: #b0b0b0;
-            margin-bottom: 10px;
+            color: #6d0000;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .publication-journal {
             font-style: italic;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
+            color: #b0b0b0;
+            font-size: 15px;
         }
 
         .publication-year {
             font-size: 14px;
-            color: #888;
-            margin-bottom: 10px;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
         }
 
         .publication-abstract {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            font-size: 14.5px;
+            line-height: 1.6;
         }
 
         .publication-link {
             display: inline-block;
-            color: #e0e0e0;
+            color: #6d0000;
             text-decoration: none;
-            border-bottom: 1px solid #555;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .publication-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #6d0000;
+            transition: width 0.3s ease;
         }
 
         .publication-link:hover {
             color: #ffffff;
-            border-color: #ffffff;
+        }
+
+        .publication-link:hover:after {
+            width: 100%;
+            background-color: #ffffff;
         }
 
         /* Social section */
@@ -122,12 +170,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 40px;
-            padding-top: 40px;
+            margin-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid #222;
         }
 
-        /* Portfolio Button */
+        /* Portfolio Button - Matches main page */
         .portfolio-button {
             display: flex;
             align-items: center;
@@ -136,23 +184,41 @@
             background-color: transparent;
             color: #e0e0e0;
             border: 1px solid #333;
-            padding: 10px 20px;
+            padding: 12px 60px;
             font-size: 16px;
+            font-weight: 500;
             text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.2s;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .portfolio-button:hover {
             color: #fff;
-            border-color: #555;
+            border-color: #6d0000;
+        }
+
+        .portfolio-button:hover:before {
+            left: 0;
         }
 
         /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 2.15rem;
         }
 
         .social-icons a {
@@ -166,12 +232,56 @@
             color: #e0e0e0;
             font-size: 18px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icons a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 1, 1, 0.1);
+            transition: all 0.3s ease;
         }
 
         .social-icons a:hover {
             color: #fff;
-            border-color: #555;
+            border-color: #6d0000;
+        }
+
+        .social-icons a:hover:before {
+            left: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .publications-content {
+                padding: 2rem 0;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .publication-title {
+                font-size: 18px;
+            }
+            
+            .social-icons {
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -183,7 +293,7 @@
                 <li><a href="index.html">About</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="publications.html" class="active">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <!-- <li><a href="projects.html">Projects</a></li> -->
             </ul>
         </div>
     </nav>
@@ -193,16 +303,54 @@
         <div class="publications-content">
             <h1 class="page-title">Publications</h1>
             
-            <ul class="publication-list">
+            <ul class="publication-list">               
+
                 <!-- Publication 1 -->
                 <li class="publication-item">
-                    <h2 class="publication-title">A Review of a Spatiotemporal Integration Framework for Built Environments: Coupling of Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS)</h2>
+                    <h2 class="publication-title">Spatiotemporal Modeling Integration Framework: Indoor Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Asssessment</h2>
                     <p class="publication-authors">Alvarez, M., Gomez, P.</p>
                     <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
-                    <p class="publication-year">Abstract accepted</p>
+                    <p class="publication-year">Full paper accepted (2025)</p>
+                    <p class="publication-abstract">
+                        To advance the understanding of airborne disease transmission in indoor environments, 
+                        researchers have developed models that independently employ well-established Computational Fluid Dynamics (CFD) 
+                        and Agent-Based Simulation (ABS). CFD models capture the dispersion of airborne particles and the influence of 
+                        ventilation and airflow patterns, while ABS frameworks can be implemented to simulate individual human behaviors, 
+                        movement, and interactions within a given scenario. Although typically applied independently, 
+                        both approaches offer critical insights into the probabilistic assessment of transmission, each representing a unique 
+                        spread dynamics modality: airborne transmission (smaller particles floating in the air) and direct transmission (particles attached to droplets), 
+                        respectively. A fully coupled CFD-ABS modeling framework would better address challenges such as a more realistic, 
+                        high-resolution spatiotemporal models, which are critical for more accurate modeling of airborne and direct disease transmission, 
+                        which in turn requires a high computational cost and timeframe desynchronization, for real-time feedback in architectural design. 
+                        Our research provides a two-tiered review of the state-of-the-art at the intersection of CFD and ABS modeling frameworks, 
+                        with a particular focus on implementation strategies and reported outcomes. The analysis is synthesized in a comparative table 
+                        that systematically evaluates nineteen studies across a set of parameters, including the CFD-ABS integration platform, 
+                        software architecture, integration schema, field of application, simulation domain scale, temporal resolution, metrics, and key findings. 
+                        The conclusion suggests the next steps to advance this area.
+                    </p>
+                </li>
+
+                <!-- Publication 2 -->
+                <li class="publication-item">
+                    <h2 class="publication-title">Coupled urban physics in microclimate modeling: Validating and enhancing simulation tools</h2>
+                    <p class="publication-authors">Rahimi, S., Alvarez, M., Berardi, U., Stone, B., Kastner, P.</p>
+                    <p class="publication-journal">Building and Environment</p>
+                    <p class="publication-year">2025</p>
+                    <p class="publication-abstract">
+                        Significant advances in microclimate modeling tools range from no coupling to fully coupled urban physics, requiring a tradeoff 
+                        between simulation speed and accuracy. This study was conducted to validate the urbanMicroclimateFoam solver for accuracy, 
+                        as a key step toward improving its reliability for urban microclimate modeling. A detailed 3D model was created, and transient 
+                        simulations were performed and compared against weather station data from Georgia Tech’s campus. The solver includes heat, air, 
+                        moisture (HAM), radiation (RAD), and vegetation (VEG) physics, and its performance was evaluated in terms of temperature, humidity,
+                         and thermal comfort. Results show strong agreement with measured data, achieving a temperature RMSE as low as 1.03 °C and a humidity 
+                         RMSE of 4.78 % at the best performing location. Simulations also captured diurnal WBGT trends and vegetation driven cooling up to 
+                         2.1 °C. The findings highlight the value of fully coupled CFD models for understanding the urban heat island effect and designing 
+                         more sustainable, climate resilient cities.
+                    </p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084" class="publication-link">View Publication</a>
                 </li>
                 
-                <!-- Publication 2 -->
+                <!-- Publication 3 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Design Spaces of Structurally Pre-evaluated Funicular Shapes</h2>
                     <p class="publication-authors">Alvarez, M., Bernal, M.</p>
@@ -225,7 +373,7 @@
                     <a href="https://www.researchgate.net/profile/Marcelo-Alvarez-11/publication/356973150_Design_Spaces_of_Structurally_Pre-evaluated_Funicular_Shapes/links/61b523ccfd2cbd720093b1c6/Design-Spaces-of-Structurally-Pre-evaluated-Funicular-Shapes.pdf" class="publication-link">View Publication</a>
                 </li>
                 
-                <!-- Publication 3 -->
+                <!-- Publication 4 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Modeling technique for vault-like structure generation through topological manipulation</h2>
                     <p class="publication-authors">Alvarez, M., Bernal, M., Castro, C.</p>
