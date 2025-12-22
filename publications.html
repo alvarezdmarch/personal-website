@@ -1,290 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Personal Bio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            line-height: 1.5;
-            color: #e0e0e0;
-            background-color: #0a0a0a;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .container {
-            margin: 0 auto;
-            padding: 0 4rem;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: flex-end; /* Right-aligned navigation */
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #e0e0e0;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #6d0000;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffffff;
-        }
-
-        .nav-links a:hover:after, .nav-links a.active:after {
-            width: 100%;
-        }
-
-        /* Publications Content */
-        .publications-content {
-            padding: 3rem 0;
-            max-width: 65rem;
-            margin: 0 auto;
-        }
-
-        .page-title {
-            font-family: 'Raleway', sans-serif;
-            font-size: 32px;
-            margin-bottom: 2rem;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .publication-list {
-            list-style: none;
-        }
-
-        .publication-item {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(34, 34, 34, 0.5);
-        }
-
-        .publication-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .publication-title {
-            font-family: 'Raleway', sans-serif;
-            font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-            line-height: 1.3;
-        }
-
-        .publication-authors {
-            font-size: 16px;
-            color: #6d0000;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .publication-journal {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            color: #b0b0b0;
-            font-size: 15px;
-        }
-
-        .publication-year {
-            font-size: 14px;
-            color: #b0b0b0;
-            margin-bottom: 1rem;
-        }
-
-        .publication-abstract {
-            margin-bottom: 1rem;
-            font-size: 14.5px;
-            line-height: 1.6;
-        }
-
-        .publication-link {
-            display: inline-block;
-            color: #6d0000;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-        }
-
-        .publication-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #6d0000;
-            transition: width 0.3s ease;
-        }
-
-        .publication-link:hover {
-            color: #ffffff;
-        }
-
-        .publication-link:hover:after {
-            width: 100%;
-            background-color: #ffffff;
-        }
-
-        /* Social section */
-        .social-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
-        }
-
-        /* Portfolio Button - Matches main page */
-        .portfolio-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: transparent;
-            color: #e0e0e0;
-            border: 1px solid #333;
-            padding: 12px 60px;
-            font-size: 16px;
-            font-weight: 500;
-            text-decoration: none;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(201, 1, 1, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-button:hover {
-            color: #fff;
-            border-color: #6d0000;
-        }
-
-        .portfolio-button:hover:before {
-            left: 0;
-        }
-
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2.15rem;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: transparent;
-            border: 1px solid #333;
-            color: #e0e0e0;
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-icons a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(201, 1, 1, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #fff;
-            border-color: #6d0000;
-        }
-
-        .social-icons a:hover:before {
-            left: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 2rem;
-            }
-            
-            .publications-content {
-                padding: 2rem 0;
-            }
-            
-            .nav-links {
-                gap: 20px;
-            }
-            
-            .page-title {
-                font-size: 28px;
-            }
-            
-            .publication-title {
-                font-size: 18px;
-            }
-            
-            .social-icons {
-                gap: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -294,6 +20,11 @@
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="publications.html" class="active">Publications</a></li>
                 <!-- <li><a href="projects.html">Projects</a></li> -->
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -302,54 +33,79 @@
     <div class="container">
         <div class="publications-content">
             <h1 class="page-title">Publications</h1>
-            
-            <ul class="publication-list">               
+
+            <ul class="publication-list">
 
                 <!-- Publication 1 -->
                 <li class="publication-item">
-                    <h2 class="publication-title">Spatiotemporal Modeling Integration Framework: Indoor Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Asssessment</h2>
-                    <p class="publication-authors">Alvarez, M., Gomez, P.</p>
+                    <h2 class="publication-title">Spatiotemporal Modeling Integration Framework: Indoor Computational
+                        Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Asssessment</h2>
+                    <p class="publication-authors">Alvarez, M., Gomez, P., Swarts, M.</p>
                     <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
-                    <p class="publication-year">Full paper accepted (2025)</p>
+                    <p class="publication-year">2025</p>
                     <p class="publication-abstract">
-                        To advance the understanding of airborne disease transmission in indoor environments, 
-                        researchers have developed models that independently employ well-established Computational Fluid Dynamics (CFD) 
-                        and Agent-Based Simulation (ABS). CFD models capture the dispersion of airborne particles and the influence of 
-                        ventilation and airflow patterns, while ABS frameworks can be implemented to simulate individual human behaviors, 
-                        movement, and interactions within a given scenario. Although typically applied independently, 
-                        both approaches offer critical insights into the probabilistic assessment of transmission, each representing a unique 
-                        spread dynamics modality: airborne transmission (smaller particles floating in the air) and direct transmission (particles attached to droplets), 
-                        respectively. A fully coupled CFD-ABS modeling framework would better address challenges such as a more realistic, 
-                        high-resolution spatiotemporal models, which are critical for more accurate modeling of airborne and direct disease transmission, 
-                        which in turn requires a high computational cost and timeframe desynchronization, for real-time feedback in architectural design. 
-                        Our research provides a two-tiered review of the state-of-the-art at the intersection of CFD and ABS modeling frameworks, 
-                        with a particular focus on implementation strategies and reported outcomes. The analysis is synthesized in a comparative table 
-                        that systematically evaluates nineteen studies across a set of parameters, including the CFD-ABS integration platform, 
-                        software architecture, integration schema, field of application, simulation domain scale, temporal resolution, metrics, and key findings. 
+                        To advance the understanding of airborne disease transmission in indoor environments,
+                        researchers have developed models that independently employ well-established Computational Fluid
+                        Dynamics (CFD)
+                        and Agent-Based Simulation (ABS). CFD models capture the dispersion of airborne particles and
+                        the influence of
+                        ventilation and airflow patterns, while ABS frameworks can be implemented to simulate individual
+                        human behaviors,
+                        movement, and interactions within a given scenario. Although typically applied independently,
+                        both approaches offer critical insights into the probabilistic assessment of transmission, each
+                        representing a unique
+                        spread dynamics modality: airborne transmission (smaller particles floating in the air) and
+                        direct transmission (particles attached to droplets),
+                        respectively. A fully coupled CFD-ABS modeling framework would better address challenges such as
+                        a more realistic,
+                        high-resolution spatiotemporal models, which are critical for more accurate modeling of airborne
+                        and direct disease transmission,
+                        which in turn requires a high computational cost and timeframe desynchronization, for real-time
+                        feedback in architectural design.
+                        Our research provides a two-tiered review of the state-of-the-art at the intersection of CFD and
+                        ABS modeling frameworks,
+                        with a particular focus on implementation strategies and reported outcomes. The analysis is
+                        synthesized in a comparative table
+                        that systematically evaluates nineteen studies across a set of parameters, including the CFD-ABS
+                        integration platform,
+                        software architecture, integration schema, field of application, simulation domain scale,
+                        temporal resolution, metrics, and key findings.
                         The conclusion suggests the next steps to advance this area.
                     </p>
+                    <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_234"
+                        class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 2 -->
                 <li class="publication-item">
-                    <h2 class="publication-title">Coupled urban physics in microclimate modeling: Validating and enhancing simulation tools</h2>
+                    <h2 class="publication-title">Coupled urban physics in microclimate modeling: Validating and
+                        enhancing simulation tools</h2>
                     <p class="publication-authors">Rahimi, S., Alvarez, M., Berardi, U., Stone, B., Kastner, P.</p>
                     <p class="publication-journal">Building and Environment</p>
                     <p class="publication-year">2025</p>
                     <p class="publication-abstract">
-                        Significant advances in microclimate modeling tools range from no coupling to fully coupled urban physics, requiring a tradeoff 
-                        between simulation speed and accuracy. This study was conducted to validate the urbanMicroclimateFoam solver for accuracy, 
-                        as a key step toward improving its reliability for urban microclimate modeling. A detailed 3D model was created, and transient 
-                        simulations were performed and compared against weather station data from Georgia Tech’s campus. The solver includes heat, air, 
-                        moisture (HAM), radiation (RAD), and vegetation (VEG) physics, and its performance was evaluated in terms of temperature, humidity,
-                         and thermal comfort. Results show strong agreement with measured data, achieving a temperature RMSE as low as 1.03 °C and a humidity 
-                         RMSE of 4.78 % at the best performing location. Simulations also captured diurnal WBGT trends and vegetation driven cooling up to 
-                         2.1 °C. The findings highlight the value of fully coupled CFD models for understanding the urban heat island effect and designing 
-                         more sustainable, climate resilient cities.
+                        Significant advances in microclimate modeling tools range from no coupling to fully coupled
+                        urban physics, requiring a tradeoff
+                        between simulation speed and accuracy. This study was conducted to validate the
+                        urbanMicroclimateFoam solver for accuracy,
+                        as a key step toward improving its reliability for urban microclimate modeling. A detailed 3D
+                        model was created, and transient
+                        simulations were performed and compared against weather station data from Georgia Tech’s campus.
+                        The solver includes heat, air,
+                        moisture (HAM), radiation (RAD), and vegetation (VEG) physics, and its performance was evaluated
+                        in terms of temperature, humidity,
+                        and thermal comfort. Results show strong agreement with measured data, achieving a temperature
+                        RMSE as low as 1.03 °C and a humidity
+                        RMSE of 4.78 % at the best performing location. Simulations also captured diurnal WBGT trends
+                        and vegetation driven cooling up to
+                        2.1 °C. The findings highlight the value of fully coupled CFD models for understanding the urban
+                        heat island effect and designing
+                        more sustainable, climate resilient cities.
                     </p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084" class="publication-link">View Publication</a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084"
+                        class="publication-link">View Publication</a>
                 </li>
-                
+
                 <!-- Publication 3 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Design Spaces of Structurally Pre-evaluated Funicular Shapes</h2>
@@ -362,73 +118,64 @@
                         in early design stages. The proposed technique approaches the problem of reducing the
                         flexibility of the design space while advancing to later design stages for vault-like shapes.
                         We start with a custom design space based on design intent. Then, we define a sampling
-                        criteria to study a reduced number of candidates. Later, the optimization process focuses
-                        on minimizing structural deformation values through shape manipulation. Results show
-                        a notorious enhancement for maximum deflection and displacement of the structure.
-                        Generally speaking, the shape optimization pattern is consistent with how vault-like
-                        shape works. All solutions reduce their span and boundary area while increasing the
-                        maximum height. Also, reaching maximum deformation values that are ten times better
-                        than the admissible final values on average.
+                        strategy to generate design alternatives. Those instances are evaluated through structural
+                        analysis. As a result, we map a design space of structurally valid shapes and show a set
+                        of geometric features that improve the structural performance of the shapes. This study
+                        contributes to a larger research stream working on the integration of performance aware
+                        modeling during the early design stages.
                     </p>
-                    <a href="https://www.researchgate.net/profile/Marcelo-Alvarez-11/publication/356973150_Design_Spaces_of_Structurally_Pre-evaluated_Funicular_Shapes/links/61b523ccfd2cbd720093b1c6/Design-Spaces-of-Structurally-Pre-evaluated-Funicular-Shapes.pdf" class="publication-link">View Publication</a>
+                    <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2021_64"
+                        class="publication-link">View Publication</a>
                 </li>
-                
+
                 <!-- Publication 4 -->
                 <li class="publication-item">
-                    <h2 class="publication-title">Modeling technique for vault-like structure generation through topological manipulation</h2>
-                    <p class="publication-authors">Alvarez, M., Bernal, M., Castro, C.</p>
+                    <h2 class="publication-title">Generative modeling of vault-like structures through topological
+                        manipulations of meshes</h2>
+                    <p class="publication-authors">Alvarez, M., Bernal, M.</p>
                     <p class="publication-journal">SIGraDi 2020: Transformative Design</p>
                     <p class="publication-year">2020</p>
                     <p class="publication-abstract">
-                        This study is based on the development of a modeling technique for vault-like structure
-                        generation through topological manipulation. Currently, topology-driven form-finding has been
-                        implemented in tensile structures, but no further studies have been conducted for
-                        compression-only structures. The focus of this study is to approach the problem of highly
-                        determined vault shapes by their input topology. The technique operates at the topological
-                        level between vertices and edges to create an input 2D topology map. The particle-spring
-                        system uses such a map to simulate the resulting 3D mesh geometry. For testing purposes,
-                        we explore three generative approaches. The results show the effectiveness of the technique
-                        to manipulate the topological relationships that controls the generation of the funicular
-                        structures.
+                        The design of shell structures has been focused mainly on the form-finding methods
+                        based on physical simulation. This paper proposes a modeling technique to generate a
+                        design space for vault-like structures using topological operations on coarse quad
+                        meshes. Unlike traditional form-finding methods, we propose a bottom-up approach
+                        relying on subdivision surfaces. We defined a set of rules to create a design space that a
+                        designer can explore. We implemented a tool as a plugin for Grasshopper/Rhinoceros. To
+                        test the tool, we explored design alternatives for a theoretical case study. The results
+                        show the capabilities of the tool to generate a design space of vault-like structures.
+                        Finally, we discussed the further steps to integrate structural analysis into the proposed
+                        modeling technique.
                     </p>
-                    <a href="https://pdf.blucher.com.br/designproceedings/sigradi2020/33.pdf" class="publication-link">View Publication</a>
+                    <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2020_41"
+                        class="publication-link">View Publication</a>
                 </li>
+
             </ul>
         </div>
 
         <div class="social-section">
             <!-- Portfolio Button -->
-            <a href="#" class="portfolio-button">
-                <i class="fas fa-briefcase"></i> View My Portfolio
+            <a href="https://alvarezdmarch.github.io/portfolio2/" class="portfolio-button">
+                Portfolio
             </a>
 
             <!-- Social Icons -->
             <div class="social-icons">
-                <a href="#" aria-label="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/alvarezdm/" aria-label="LinkedIn Profile">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" aria-label="GitHub Profile">
+                <a href="https://github.com/alvarezdmarch" aria-label="GitHub Profile">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:your.email@example.com" aria-label="Email Contact">
+                <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <script>
-        // Simple JavaScript to handle active navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
+    <script src="theme.js"></script>
 </body>
+
 </html>
