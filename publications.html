@@ -19,7 +19,7 @@
                 <li><a href="index.html">About</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="publications.html" class="active">Publications</a></li>
-                <!-- <li><a href="projects.html">Projects</a></li> -->
+                <li><a href="projects.html">Projects</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                         <i class="fas fa-sun"></i>
@@ -36,43 +36,94 @@
 
             <ul class="publication-list">
 
-                <!-- Publication 1 -->
+                <!-- Publication 1.1 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Spatiotemporal Modeling Integration Framework: Indoor Computational
                         Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Asssessment</h2>
                     <p class="publication-authors">Alvarez, M., Gomez, P., Swarts, M.</p>
                     <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
                     <p class="publication-year">2025</p>
-                    <p class="publication-abstract">
-                        To advance the understanding of airborne disease transmission in indoor environments,
-                        researchers have developed models that independently employ well-established Computational Fluid
-                        Dynamics (CFD)
-                        and Agent-Based Simulation (ABS). CFD models capture the dispersion of airborne particles and
-                        the influence of
-                        ventilation and airflow patterns, while ABS frameworks can be implemented to simulate individual
-                        human behaviors,
-                        movement, and interactions within a given scenario. Although typically applied independently,
-                        both approaches offer critical insights into the probabilistic assessment of transmission, each
-                        representing a unique
-                        spread dynamics modality: airborne transmission (smaller particles floating in the air) and
-                        direct transmission (particles attached to droplets),
-                        respectively. A fully coupled CFD-ABS modeling framework would better address challenges such as
-                        a more realistic,
-                        high-resolution spatiotemporal models, which are critical for more accurate modeling of airborne
-                        and direct disease transmission,
-                        which in turn requires a high computational cost and timeframe desynchronization, for real-time
-                        feedback in architectural design.
-                        Our research provides a two-tiered review of the state-of-the-art at the intersection of CFD and
-                        ABS modeling frameworks,
-                        with a particular focus on implementation strategies and reported outcomes. The analysis is
-                        synthesized in a comparative table
-                        that systematically evaluates nineteen studies across a set of parameters, including the CFD-ABS
-                        integration platform,
-                        software architecture, integration schema, field of application, simulation domain scale,
-                        temporal resolution, metrics, and key findings.
-                        The conclusion suggests the next steps to advance this area.
-                    </p>
+                    <details class="publication-details">
+                        <summary class="publication-summary">Abstract</summary>
+                        <p class="publication-abstract">
+                            To advance the understanding of airborne disease transmission in indoor environments,
+                            researchers have developed models that independently employ well-established Computational
+                            Fluid
+                            Dynamics (CFD)
+                            and Agent-Based Simulation (ABS). CFD models capture the dispersion of airborne particles
+                            and
+                            the influence of
+                            ventilation and airflow patterns, while ABS frameworks can be implemented to simulate
+                            individual
+                            human behaviors,
+                            movement, and interactions within a given scenario. Although typically applied
+                            independently,
+                            both approaches offer critical insights into the probabilistic assessment of transmission,
+                            each
+                            representing a unique
+                            spread dynamics modality: airborne transmission (smaller particles floating in the air) and
+                            direct transmission (particles attached to droplets),
+                            respectively. A fully coupled CFD-ABS modeling framework would better address challenges
+                            such as
+                            a more realistic,
+                            high-resolution spatiotemporal models, which are critical for more accurate modeling of
+                            airborne
+                            and direct disease transmission,
+                            which in turn requires a high computational cost and timeframe desynchronization, for
+                            real-time
+                            feedback in architectural design.
+                            Our research provides a two-tiered review of the state-of-the-art at the intersection of CFD
+                            and
+                            ABS modeling frameworks,
+                            with a particular focus on implementation strategies and reported outcomes. The analysis is
+                            synthesized in a comparative table
+                            that systematically evaluates nineteen studies across a set of parameters, including the
+                            CFD-ABS
+                            integration platform,
+                            software architecture, integration schema, field of application, simulation domain scale,
+                            temporal resolution, metrics, and key findings.
+                            The conclusion suggests the next steps to advance this area.
+                        </p>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_234"
+                        class="publication-link">View Publication</a>
+                </li>
+
+                <!-- Publication 1.2 -->
+                <li class="publication-item">
+                    <h2 class="publication-title">Airflow-Pathogen Spread Dynamics: A CFD-ABS approach to optimizing
+                        ventilation and filtration
+                        strategies to reduce risk</h2>
+                    <p class="publication-authors">Debnath, S., Yang, A., Alvarez, M., Gomez, P., Swarts, M.</p>
+                    <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
+                    <p class="publication-year">2025</p>
+                    <details class="publication-details">
+                        <summary class="publication-summary">Abstract</summary>
+                        <p class="publication-abstract">
+                            Building ventilation systems are crucial in airborne transmission, yet current standards
+                            (ASHRAE) while meeting indoor
+                            air quality (IAQ) requirements, fall short in high-intensity environments like gyms due to
+                            high occupancy, prolonged
+                            interactions, and elevated respiratory rates. This study examines airborne pathogen risks
+                            using a Cardiopulmonary
+                            Rehabilitation Gym, addressing the aerosol dispersion from equipment induced forced
+                            convection and occupant thermal
+                            plumes as well as the effectiveness of transitioning from MERV-13 filtration system. An
+                            integrated framework synthesizes
+                            computational fluid dynamics (CFD) and agent-based simulation (ABS) to examine ventilation
+                            strategies (mixing vs.
+                            displacement) and MERV-13 filtration efficiency for reducing pathogen exposure. The CFD
+                            model simulates equipment
+                            and thermal induced airflow, incorporating HVAC boundary conditions including air change
+                            rates, stratification and
+                            filtration. Simulations, validated using Wells-Riley model and contaminant removal
+                            effectiveness (CRE), will indicate
+                            induced convection increases horizontal pathogen dissemination by 50%. While MERV-13
+                            filtration significantly reduces
+                            concentration despite superspreader impact.
+                        </p>
+                    </details>
+                    <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_284"
                         class="publication-link">View Publication</a>
                 </li>
 
@@ -83,25 +134,34 @@
                     <p class="publication-authors">Rahimi, S., Alvarez, M., Berardi, U., Stone, B., Kastner, P.</p>
                     <p class="publication-journal">Building and Environment</p>
                     <p class="publication-year">2025</p>
-                    <p class="publication-abstract">
-                        Significant advances in microclimate modeling tools range from no coupling to fully coupled
-                        urban physics, requiring a tradeoff
-                        between simulation speed and accuracy. This study was conducted to validate the
-                        urbanMicroclimateFoam solver for accuracy,
-                        as a key step toward improving its reliability for urban microclimate modeling. A detailed 3D
-                        model was created, and transient
-                        simulations were performed and compared against weather station data from Georgia Tech’s campus.
-                        The solver includes heat, air,
-                        moisture (HAM), radiation (RAD), and vegetation (VEG) physics, and its performance was evaluated
-                        in terms of temperature, humidity,
-                        and thermal comfort. Results show strong agreement with measured data, achieving a temperature
-                        RMSE as low as 1.03 °C and a humidity
-                        RMSE of 4.78 % at the best performing location. Simulations also captured diurnal WBGT trends
-                        and vegetation driven cooling up to
-                        2.1 °C. The findings highlight the value of fully coupled CFD models for understanding the urban
-                        heat island effect and designing
-                        more sustainable, climate resilient cities.
-                    </p>
+                    <details class="publication-details">
+                        <summary class="publication-summary">Abstract</summary>
+                        <p class="publication-abstract">
+                            Significant advances in microclimate modeling tools range from no coupling to fully coupled
+                            urban physics, requiring a tradeoff
+                            between simulation speed and accuracy. This study was conducted to validate the
+                            urbanMicroclimateFoam solver for accuracy,
+                            as a key step toward improving its reliability for urban microclimate modeling. A detailed
+                            3D
+                            model was created, and transient
+                            simulations were performed and compared against weather station data from Georgia Tech’s
+                            campus.
+                            The solver includes heat, air,
+                            moisture (HAM), radiation (RAD), and vegetation (VEG) physics, and its performance was
+                            evaluated
+                            in terms of temperature, humidity,
+                            and thermal comfort. Results show strong agreement with measured data, achieving a
+                            temperature
+                            RMSE as low as 1.03 °C and a humidity
+                            RMSE of 4.78 % at the best performing location. Simulations also captured diurnal WBGT
+                            trends
+                            and vegetation driven cooling up to
+                            2.1 °C. The findings highlight the value of fully coupled CFD models for understanding the
+                            urban
+                            heat island effect and designing
+                            more sustainable, climate resilient cities.
+                        </p>
+                    </details>
                     <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084"
                         class="publication-link">View Publication</a>
                 </li>
@@ -112,18 +172,22 @@
                     <p class="publication-authors">Alvarez, M., Bernal, M.</p>
                     <p class="publication-journal">SIGraDi 2021: Designing Possibilities</p>
                     <p class="publication-year">2021</p>
-                    <p class="publication-abstract">
-                        In this paper, we develop a structural pre-evaluation and optimization
-                        technique for vault-like shapes. This implementation focuses on exploring design spaces
-                        in early design stages. The proposed technique approaches the problem of reducing the
-                        flexibility of the design space while advancing to later design stages for vault-like shapes.
-                        We start with a custom design space based on design intent. Then, we define a sampling
-                        strategy to generate design alternatives. Those instances are evaluated through structural
-                        analysis. As a result, we map a design space of structurally valid shapes and show a set
-                        of geometric features that improve the structural performance of the shapes. This study
-                        contributes to a larger research stream working on the integration of performance aware
-                        modeling during the early design stages.
-                    </p>
+                    <details class="publication-details">
+                        <summary class="publication-summary">Abstract</summary>
+                        <p class="publication-abstract">
+                            In this paper, we develop a structural pre-evaluation and optimization
+                            technique for vault-like shapes. This implementation focuses on exploring design spaces
+                            in early design stages. The proposed technique approaches the problem of reducing the
+                            flexibility of the design space while advancing to later design stages for vault-like
+                            shapes.
+                            We start with a custom design space based on design intent. Then, we define a sampling
+                            strategy to generate design alternatives. Those instances are evaluated through structural
+                            analysis. As a result, we map a design space of structurally valid shapes and show a set
+                            of geometric features that improve the structural performance of the shapes. This study
+                            contributes to a larger research stream working on the integration of performance aware
+                            modeling during the early design stages.
+                        </p>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2021_64"
                         class="publication-link">View Publication</a>
                 </li>
@@ -135,18 +199,21 @@
                     <p class="publication-authors">Alvarez, M., Bernal, M.</p>
                     <p class="publication-journal">SIGraDi 2020: Transformative Design</p>
                     <p class="publication-year">2020</p>
-                    <p class="publication-abstract">
-                        The design of shell structures has been focused mainly on the form-finding methods
-                        based on physical simulation. This paper proposes a modeling technique to generate a
-                        design space for vault-like structures using topological operations on coarse quad
-                        meshes. Unlike traditional form-finding methods, we propose a bottom-up approach
-                        relying on subdivision surfaces. We defined a set of rules to create a design space that a
-                        designer can explore. We implemented a tool as a plugin for Grasshopper/Rhinoceros. To
-                        test the tool, we explored design alternatives for a theoretical case study. The results
-                        show the capabilities of the tool to generate a design space of vault-like structures.
-                        Finally, we discussed the further steps to integrate structural analysis into the proposed
-                        modeling technique.
-                    </p>
+                    <details class="publication-details">
+                        <summary class="publication-summary">Abstract</summary>
+                        <p class="publication-abstract">
+                            The design of shell structures has been focused mainly on the form-finding methods
+                            based on physical simulation. This paper proposes a modeling technique to generate a
+                            design space for vault-like structures using topological operations on coarse quad
+                            meshes. Unlike traditional form-finding methods, we propose a bottom-up approach
+                            relying on subdivision surfaces. We defined a set of rules to create a design space that a
+                            designer can explore. We implemented a tool as a plugin for Grasshopper/Rhinoceros. To
+                            test the tool, we explored design alternatives for a theoretical case study. The results
+                            show the capabilities of the tool to generate a design space of vault-like structures.
+                            Finally, we discussed the further steps to integrate structural analysis into the proposed
+                            modeling technique.
+                        </p>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2020_41"
                         class="publication-link">View Publication</a>
                 </li>

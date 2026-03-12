@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Marcelo Alvarez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Content -->
+    <div class="container">
+        <div class="projects-content">
+            <h1 class="page-title">Projects</h1>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="/resources/umcf.gif" alt="OutdoorPlus" class="project-image">
+                    <div class="project-info">
+                        <h2 class="project-title">Eddy3D-Outdoor+</h2>
+                        <p class="project-category">Grasshopper plugin development / C#</p>
+                        <p class="project-description">
+                            Development of a Grasshopper plugin for urban microclimate simulations
+                            integrating the urbanMicroclimateFoam solver for CFD analysis.
+                        </p>
+                        <a href="https://docs.eddy3d.com/outdoorplus/" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="/resources/docshopper_scr_2.png" alt="DocsHopper" class="project-image">
+                    <div class="project-info">
+                        <h2 class="project-title">DocsHopper</h2>
+                        <p class="project-category">Grasshopper plugin development / C#</p>
+                        <p class="project-description">
+                            DocsHopper is a utility plugin that extracts component metadata directly from your
+                            loaded Grasshopper assemblies and generates static documentation websites.
+                        </p>
+                        <a href="https://github.com/alvarezdmarch/DocsHopper" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="/resources/wip_placeholder.png" alt="Project 3" class="project-image">
+                    <div class="project-info">
+                        <h2 class="project-title">WIP</h2>
+                        <p class="project-category">WIP</p>
+                        <p class="project-description">
+                            Work In Progress
+                        </p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <!-- Portfolio Button -->
+            <a href="#" class="portfolio-button">
+                Portfolio
+            </a>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:your.email@example.com" aria-label="Email Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script>
+        // Simple JavaScript to handle active navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -47,7 +47,7 @@ body {
     background-color: var(--bg-color);
     font-family: 'Montserrat', sans-serif;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: clip;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -72,6 +72,10 @@ body {
 nav {
     padding: 20px 0;
     border-bottom: 1px solid var(--nav-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
 }
 
 .nav-container {
@@ -331,9 +335,12 @@ html[data-theme="light"] .skill-item:hover img {
 /* Social section */
 .social-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 10px;
+    gap: 30px;
+    padding-bottom: 20px;
 }
 
 /* Portfolio Button */
@@ -349,7 +356,7 @@ html[data-theme="light"] .skill-item:hover img {
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
-    margin-bottom: 25px;
+    margin-bottom: 0;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -448,6 +455,17 @@ html[data-theme="light"] .skill-item:hover img {
     background-color: var(--accent-color);
 }
 
+.cv-summary {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.cv-summary:hover .section-title {
+    color: var(--accent-color);
+}
+
 .entry {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
@@ -505,10 +523,22 @@ html[data-theme="light"] .skill-item:hover img {
 
 .page-title {
     font-family: 'Raleway', sans-serif;
-    font-size: 32px;
-    margin-bottom: 2rem;
+    font-size: 22px;
     color: var(--active-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
     letter-spacing: 0.5px;
+}
+
+.page-title:after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
 }
 
 .publication-list {
@@ -528,7 +558,7 @@ html[data-theme="light"] .skill-item:hover img {
 
 .publication-title {
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--active-color);
     margin-bottom: 0.75rem;
     font-weight: 500;
@@ -546,7 +576,7 @@ html[data-theme="light"] .skill-item:hover img {
     font-style: italic;
     margin-bottom: 0.5rem;
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 14.5px;
 }
 
 .publication-year {
@@ -555,8 +585,27 @@ html[data-theme="light"] .skill-item:hover img {
     margin-bottom: 1rem;
 }
 
+.publication-details {
+    margin-bottom: 1.5rem;
+}
+
+.publication-summary {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+    user-select: none;
+    outline: none;
+}
+
+.publication-summary:hover {
+    color: var(--active-color);
+}
+
 .publication-abstract {
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
     font-size: 14.5px;
     line-height: 1.6;
 }
@@ -623,6 +672,11 @@ html[data-theme="light"] .skill-item:hover img {
         padding: 2rem 0;
     }
 
+    .social-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .skills-grid {
         /* For CV skills if grid is used */
         grid-template-columns: 1fr;
@@ -632,11 +686,98 @@ html[data-theme="light"] .skill-item:hover img {
         gap: 1.5rem;
     }
 
-    .page-title {
-        font-size: 28px;
-    }
-
     .publication-title {
         font-size: 18px;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Projects Page Specifics */
+.projects-content {
+    padding: 3rem 0;
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: var(--active-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.project-category {
+    font-size: 14px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+.project-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--active-color);
+}
+
+.project-link:hover:after {
+    width: 100%;
+    background-color: var(--active-color);
 }
