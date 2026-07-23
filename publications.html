@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | Personal Bio</title>
+    <meta name="description" content="Research publications by Marcelo Álvarez on indoor CFD-ABS coupling, urban microclimate physics validation, funicular shape pre-evaluation, and generative vault modeling.">
+    <meta name="author" content="Marcelo Álvarez">
+    <meta property="og:title" content="Publications | Marcelo Álvarez">
+    <meta property="og:description" content="Research publications in urban microclimate modeling and computational design by Marcelo Álvarez.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
@@ -12,9 +16,16 @@
 </head>
 
 <body>
+    <!-- Fixed Background -->
+    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Mobile Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">About</a></li>
                 <li><a href="cv.html">CV</a></li>
@@ -86,7 +97,7 @@
                         </p>
                     </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_234"
-                        class="publication-link">View Publication</a>
+                        target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 1.2 -->
@@ -124,7 +135,7 @@
                         </p>
                     </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_284"
-                        class="publication-link">View Publication</a>
+                        target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 2 -->
@@ -163,7 +174,7 @@
                         </p>
                     </details>
                     <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084"
-                        class="publication-link">View Publication</a>
+                        target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 3 -->
@@ -189,7 +200,7 @@
                         </p>
                     </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2021_64"
-                        class="publication-link">View Publication</a>
+                        target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 4 -->
@@ -215,7 +226,7 @@
                         </p>
                     </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2020_41"
-                        class="publication-link">View Publication</a>
+                        target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
             </ul>
@@ -223,16 +234,16 @@
 
         <div class="social-section">
             <!-- Portfolio Button -->
-            <a href="https://alvarezdmarch.github.io/portfolio2/" class="portfolio-button">
+            <a href="https://alvarezdmarch.github.io/portfolio2/" target="_blank" rel="noopener noreferrer" class="portfolio-button">
                 Portfolio
             </a>
 
             <!-- Social Icons -->
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/alvarezdm/" aria-label="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/alvarezdm/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/alvarezdmarch" aria-label="GitHub Profile">
+                <a href="https://github.com/alvarezdmarch" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
@@ -240,6 +251,34 @@
                 </a>
             </div>
         </div>
+
+        <footer class="site-footer">
+            <p>© 2026 Marcelo Álvarez • Architect & Computational Designer</p>
+        </footer>
+    </div>
+
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
     <script src="theme.js"></script>
