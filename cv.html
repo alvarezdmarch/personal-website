@@ -4,41 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Marcelo Álvarez</title>
     <meta name="description" content="Curriculum Vitae of Marcelo Álvarez - Architect & Computational Designer, Research Engineer at GTRI. Education, research experience, publications, and technical skills.">
     <meta name="author" content="Marcelo Álvarez">
     <meta property="og:title" content="CV | Marcelo Álvarez">
     <meta property="og:description" content="Curriculum Vitae of Marcelo Álvarez - Research Engineer & Computational Designer.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { }
+    </script>
+    <script src="layout.js"></script>
 </head>
 
 <body>
-    <!-- Fixed Background -->
-    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Mobile Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html">About</a></li>
-                <li><a href="cv.html" class="active">CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <script>siteHeader();</script>
 
     <!-- CV Content -->
     <div class="container">
@@ -53,7 +39,7 @@
                     <h3 class="entry-title">Master of Science in Design Computation</h3>
                     <h4 class="entry-subtitle">Georgia Institute of Technology</h4>
                     <div class="entry-date">August 2024 - December 2025</div>
-                    <p class="entry-description" style="font-weight: bold">Thesis: An urban microclimate comparative
+                    <p class="entry-description entry-thesis">Thesis: An urban microclimate comparative
                         study between Outdoor+ and
                         ENVI-met
                     </p>
@@ -196,29 +182,29 @@
                 </summary>
                 <div class="entry">
                     <h3 class="entry-title">SIGraDi 2025</h3>
-                    <p class="entry-description" style="padding-bottom: 1rem;">• Alvarez, Marcelo; Gomez-Zamora, Paula;
+                    <p class="entry-description entry-citation">• Alvarez, Marcelo; Gomez-Zamora, Paula;
                         Swarts, Matthew. "Spatiotemporal Modeling Integration Framework: Indoor Computational Fluid
                         Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Assessment." SIGraDi Meta-responsive
                         Approaches, December 2025.
                     </p>
-                    <p class="entry-description" style="padding-bottom: 1rem;">• Debnath, Sharmista; Yang, Amy; Alvarez,
-                        Marcelo; Gomez-Zamore, Paula; Swarts, Matthew. Airflow-Pathogen Spread Dynamics: A CFD-ABS
+                    <p class="entry-description entry-citation">• Debnath, Sharmista; Yang, Amy; Alvarez,
+                        Marcelo; Gomez-Zamora, Paula; Swarts, Matthew. Airflow-Pathogen Spread Dynamics: A CFD-ABS
                         Approach to Optimizing Ventilation and Filtration Strategies to Reduce Risk. SIGraDi 2025,
                         December 2025.</p>
 
                     <h3 class="entry-title">Building and Environment 2025</h3>
-                    <p class="entry-description" style="padding-bottom: 1rem;">Rahimi, Sina, Marcelo Alvarez, Umberto
+                    <p class="entry-description entry-citation">Rahimi, Sina, Marcelo Alvarez, Umberto
                         Berardi, Brian Stone, and Patrick Kastner. "Coupled Urban Physics in Microclimate Modeling:
                         Validating and Enhancing Simulation Tools." Building and Environment, September 2025, 113637.
                     </p>
 
                     <h3 class="entry-title">SIGraDi 2021</h3>
-                    <p class="entry-description" style="padding-bottom: 1rem;">Álvarez, Marcelo, and Marcelo Bernal.
+                    <p class="entry-description entry-citation">Álvarez, Marcelo, and Marcelo Bernal.
                         "Design Spaces of Structurally Pre-Evaluated Funicular Shapes." Blucher Design Proceedings,
                         Editora Blucher, December 2021, 807–18.</p>
 
                     <h3 class="entry-title">SIGraDi 2020</h3>
-                    <p class="entry-description">Álvarez, Marcelo, Marcelo Bernal, and Carlos Castro. "Modeling
+                    <p class="entry-description entry-citation">Álvarez, Marcelo, Marcelo Bernal, and Carlos Castro. "Modeling
                         Technique for Vault-like Structure Generation through Topological Manipulation." Blucher Design
                         Proceedings, Editora Blucher, December 2020, 238–45.</p>
                 </div>
@@ -260,6 +246,9 @@
                     <li class="skill-item">Python</li>
                     <li class="skill-item">C#</li>
                     <li class="skill-item">ENVI-met</li>
+                    <li class="skill-item">EnergyPlus</li>
+                    <li class="skill-item">GridLAB-D</li>
+                    <li class="skill-item">HELICS</li>
                     <li class="skill-item">Adobe Suite</li>
                     <li class="skill-item">Twinmotion</li>
                     <li class="skill-item">OpenFOAM</li>
@@ -267,71 +256,13 @@
                     <li class="skill-item">AutoCAD</li>
                     <li class="skill-item">R</li>
                     <li class="skill-item">Microsoft Excel</li>
+                    <li class="skill-item">Docker</li>
                 </ul>
             </details>
         </div>
-        <div class="social-section">
-            <!-- Portfolio Button -->
-            <a href="https://alvarezdmarch.github.io/portfolio2/" target="_blank" rel="noopener noreferrer" class="portfolio-button">
-                Portfolio
-            </a>
-
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/alvarezdm/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/alvarezdmarch" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <p>© 2026 Marcelo Álvarez • Architect & Computational Designer</p>
-        </footer>
+        <script>siteFooter();</script>
     </div>
 
-
-    <div class="background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <script>
-        // Simple JavaScript to handle active navigation
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
     <script src="theme.js"></script>
 </body>
 

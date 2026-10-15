@@ -4,42 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelo Álvarez | Architect &amp; Computational Designer</title>
     <meta name="description" content="Marcelo Álvarez - Architect & Computational Designer specializing in data-driven methods, urban microclimate CFD, and custom BIM tools. M.S. Design Computation, Georgia Tech.">
     <meta name="author" content="Marcelo Álvarez">
     <meta property="og:title" content="Marcelo Álvarez | Architect & Computational Designer">
     <meta property="og:description" content="M.S. in Design Computation, Georgia Institute of Technology. Research Engineer & Computational Designer.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/profilepicture2.jpg">
+    <meta property="og:image" content="https://www.alvarezdm.me/resources/profilepicture2.jpg">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { }
+    </script>
+    <script src="layout.js"></script>
 </head>
 
 <body>
-    <!-- Fixed Background -->
-    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Mobile Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">About</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <script>siteHeader();</script>
 
     <!-- Main Content -->
     <div class="container">
@@ -50,17 +36,20 @@
                     <h2>Architect</h2>
                     <h4>Computational Designer</h4>
                 </div>
-                <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/profilepicture2.jpg"
-                    alt="Profile Picture" class="profile-image">
-                <p style="font-weight: 300; padding-top: 1.5rem; font-size: small;">M.S. in Design Computation, Georgia
-                    Institute of Technology</p>
-                <p style="font-weight: 300; padding-top: 0.75rem; font-size: small;">Professional degree in
-                    Architecture, Universidad Técnica Federico Santa María</p>
+                <img src="resources/profilepicture2.webp" width="250" height="250"
+                    alt="Portrait of Marcelo Álvarez" class="profile-image">
+                <p class="profile-degree">M.S. in Design Computation, Georgia Institute of Technology</p>
+                <p class="profile-degree">Professional degree in Architecture, Universidad Técnica Federico Santa
+                    María</p>
             </div>
             <div class="right-column">
                 <div class="bio">
+                    <p class="bio-lead">
+                        Architect and computational designer building simulation, BIM, and data-driven tools for
+                        performance-driven, resilient design.
+                    </p>
                     <p>
-                        Marcelo Alvarez holds an M.S. in Design Computation from the Georgia Institute of Technology,
+                        Marcelo Álvarez holds an M.S. in Design Computation from the Georgia Institute of Technology,
                         where his work
                         focuses on data-driven methods for architecture and design. He also holds a professional degree
                         in
@@ -72,120 +61,76 @@
                         performance-driven and innovative design processes.
                     </p>
                     <p>
-                        He is currently working as a Research Engineer I/Systems Engineer I at the Georgia Tech Research
-                        Institute.
-                        Previously, he worked as a Graduate Research Assistant at the Georgia Tech Research Institute
-                        (GTRI), where he conducted research and developed advanced computational design methods
-                        integrating Building Information Modeling (BIM) and Computational Fluid Dynamics (CFD).
-                        He served as a Teaching Assistant for the Vertically
-                        Integrated Project (VIP) Computing Building Resiliency at Georgia Tech, supporting
-                        interdisciplinary research on sustainable and occupant-centered design.
-                        He is also contributing to the development of <a href="https://docs.eddy3d.com/outdoorplus/"
-                            target="_blank" rel="noopener noreferrer" style="color: #6d0000; font-weight: bold;">Outdoor+</a>,
-                        a Grasshopper plugin that leverages the urbanMicroclimateFoam solver from ETH Zurich to simulate
-                        urban microclimates. His work bridges computational tool
-                        development, environmental simulation, and data-driven design for resilient built environments.
+                        He is currently a Research Engineer I/Systems Engineer I at the Georgia Tech Research Institute
+                        (GTRI), working on energy simulations for buildings and critical infrastructure.
+                    </p>
+                    <p>
+                        Previously, as a Graduate Research Assistant at GTRI, he conducted research and developed
+                        advanced computational design methods integrating Building Information Modeling (BIM) and
+                        Computational Fluid Dynamics (CFD). He also contributed to the development of
+                        <a href="https://docs.eddy3d.com/outdoorplus/" target="_blank"
+                            rel="noopener noreferrer">Outdoor+</a>, a Grasshopper plugin that leverages the
+                        urbanMicroclimateFoam solver from ETH Zurich to simulate urban microclimates. He has also served
+                        as a Teaching Assistant for the Vertically Integrated Project (VIP) Computing Building
+                        Resiliency at Georgia Tech, supporting interdisciplinary research on sustainable and
+                        occupant-centered design. His work bridges
+                        computational tool development, environmental simulation, and data-driven design for resilient
+                        built environments.
                     </p>
                     <h3>Skills</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">Grasshopper: Advanced parametric modeling and data manipulation
-                            </div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/grasshopper.png"
-                                alt="Grasshopper">
+                    <!-- To add a skill, add one <li class="skill-item"> line to the matching group -->
+                    <div class="skill-groups">
+                        <div class="skill-group">
+                            <h5 class="skill-group-title">Design &amp; BIM</h5>
+                            <ul class="skills-list">
+                                <li class="skill-item">Rhinoceros</li>
+                                <li class="skill-item">Grasshopper</li>
+                                <li class="skill-item">Revit</li>
+                                <li class="skill-item">AutoCAD</li>
+                            </ul>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">Revit: BIM and custom IFC tool development</div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/revit.png"
-                                alt="Revit">
+                        <div class="skill-group">
+                            <h5 class="skill-group-title">Programming &amp; Tools</h5>
+                            <ul class="skills-list">
+                                <li class="skill-item">Python</li>
+                                <li class="skill-item">C#</li>
+                                <li class="skill-item">R</li>
+                                <li class="skill-item">Docker</li>
+                            </ul>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">Python: Programming for computational design & data analytics</div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/python.png"
-                                alt="Python">
+                        <div class="skill-group">
+                            <h5 class="skill-group-title">Simulation</h5>
+                            <ul class="skills-list">
+                                <li class="skill-item">OpenFOAM</li>
+                                <li class="skill-item">ENVI-met</li>
+                                <li class="skill-item">EnergyPlus</li>
+                                <li class="skill-item">GridLAB-D</li>
+                                <li class="skill-item">HELICS</li>
+                            </ul>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">C#: Grasshopper plugin development and computational tools</div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/csharp.png"
-                                alt="C#">
+                        <div class="skill-group">
+                            <h5 class="skill-group-title">Data &amp; GIS</h5>
+                            <ul class="skills-list">
+                                <li class="skill-item">ArcGIS</li>
+                                <li class="skill-item">Microsoft Excel</li>
+                            </ul>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">Rhinoceros: 3D modeling and digital fabrication</div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/rhino.png"
-                                alt="Rhinoceros">
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">Adobe Creative Suite: Visual communication and design</div>
-                            <img src="https://raw.githubusercontent.com/alvarezdmarch/personal-website/refs/heads/main/resources/adobe.png"
-                                alt="Adobe">
+                        <div class="skill-group">
+                            <h5 class="skill-group-title">Visualization</h5>
+                            <ul class="skills-list">
+                                <li class="skill-item">Adobe Creative Suite</li>
+                                <li class="skill-item">Twinmotion</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="social-section">
-            <!-- Portfolio Button -->
-            <a href="https://alvarezdmarch.github.io/portfolio2/" target="_blank" rel="noopener noreferrer" class="portfolio-button">
-                Portfolio
-            </a>
-
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/alvarezdm/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/alvarezdmarch" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <p>© 2026 Marcelo Álvarez • Architect & Computational Designer</p>
-        </footer>
-    </div>
-
-
-    <div class="background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <script>siteFooter();</script>
     </div>
 
     <script src="theme.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

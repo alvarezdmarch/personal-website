@@ -4,6 +4,8 @@
     --text-color: #e0e0e0;
     --text-muted: #b0b0b0;
     --accent-color: #6d0000;
+    --accent-text: #e04848;
+    /* Brighter red for text on the dark background */
     --border-color: #222;
     --hover-bg: rgba(255, 255, 255, 0.05);
     --card-bg: rgba(255, 255, 255, 0.03);
@@ -20,6 +22,7 @@ html[data-theme="light"] {
     --text-color: #000000;
     --text-muted: #555555;
     --accent-color: #8a0000;
+    --accent-text: #8a0000;
     /* Slightly darker red for light mode contrast */
     --border-color: #ddd;
     --hover-bg: rgba(0, 0, 0, 0.05);
@@ -132,7 +135,7 @@ nav {
 }
 
 .menu-toggle:hover {
-    color: var(--accent-color);
+    color: var(--accent-text);
 }
 
 .nav-links {
@@ -189,7 +192,27 @@ nav {
 }
 
 .theme-toggle:hover {
-    color: var(--accent-color);
+    color: var(--accent-text);
+}
+
+/* Inline SVG icons */
+.icon {
+    width: auto;
+    height: 1em;
+    fill: currentColor;
+    position: relative;
+}
+
+.theme-toggle .icon-moon,
+.menu-toggle .icon-close,
+html[data-theme="light"] .theme-toggle .icon-sun,
+.menu-toggle[aria-expanded="true"] .icon-open {
+    display: none;
+}
+
+html[data-theme="light"] .theme-toggle .icon-moon,
+.menu-toggle[aria-expanded="true"] .icon-close {
+    display: block;
 }
 
 /* Main Content */
@@ -226,7 +249,7 @@ nav {
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    color: var(--accent-color);
+    color: var(--accent-text);
     margin-bottom: 0.25rem;
 }
 
@@ -285,7 +308,8 @@ nav {
 }
 
 .bio a {
-    color: var(--accent-color);
+    color: var(--accent-text);
+    font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -294,92 +318,67 @@ nav {
     color: var(--active-color);
 }
 
-/* Skills Grid */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    align-items: center;
+.bio .bio-lead {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--active-color);
+    margin-bottom: 1rem;
+}
+
+.profile-degree {
+    font-weight: 300;
+    font-size: small;
+    padding-top: 0.75rem;
+}
+
+.profile-image + .profile-degree {
     padding-top: 1.5rem;
 }
 
-.skill-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+/* Skills */
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem 2rem;
+    padding-top: 1.5rem;
 }
 
-.skills-list img {
-    width: 82px;
-    height: 82px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: grayscale(100%) opacity(0.7);
-    border: 2px solid transparent;
-    /* darker border for unselected state */
-    padding: 5px;
-    border-radius: 0;
-    background: var(--card-bg);
-}
-
-.skill-item:hover img {
-    transform: translateY(-5px) scale(1.05);
-    filter: grayscale(0%) opacity(1);
-    border-color: rgba(109, 0, 0, 0.5);
-    background: var(--social-hover-bg);
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
-}
-
-.skill-info {
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%) translateY(5px);
-    background-color: rgba(10, 10, 10, 0.95);
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 0;
+.skill-group-title {
+    font-family: 'Raleway', sans-serif;
     font-size: 13px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(109, 0, 0, 0.4);
-    z-index: 100;
-    width: max-content;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
 }
 
-.skill-item:hover .skill-info {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
 }
 
-.skill-info:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #6d0000 transparent transparent transparent;
+.skill-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    border-radius: 0;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Light Mode specific icon adjustments */
-html[data-theme="light"] .skills-list img {
-    filter: grayscale(100%) invert(1) opacity(0.8);
-}
-
-html[data-theme="light"] .skill-item:hover img {
-    /* Keep inverted on hover so they differ from the dark-mode optimized originals */
-    filter: grayscale(0%) invert(1) opacity(1);
+.skill-item:hover {
+    border-color: var(--accent-color);
+    color: var(--active-color);
+    transform: translateY(-2px);
+    background: var(--social-hover-bg);
 }
 
 /* Social section */
@@ -513,7 +512,7 @@ html[data-theme="light"] .skill-item:hover img {
 }
 
 .cv-summary:hover .section-title {
-    color: var(--accent-color);
+    color: var(--accent-text);
 }
 
 .entry {
@@ -537,7 +536,7 @@ html[data-theme="light"] .skill-item:hover img {
 
 .entry-subtitle {
     font-size: 16px;
-    color: var(--accent-color);
+    color: var(--accent-text);
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
@@ -564,33 +563,20 @@ html[data-theme="light"] .skill-item:hover img {
     margin-bottom: 0.25rem;
 }
 
-/* CV Technical Skills List */
 .cv-details .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    list-style: none;
     padding-top: 1rem;
 }
 
-.cv-details .skill-item {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-color);
-    padding: 0.4rem 1rem;
-    border-radius: 0;
-    font-size: 13.5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: default;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.entry-thesis {
+    font-weight: bold;
 }
 
-.cv-details .skill-item:hover {
-    border-color: var(--accent-color);
-    color: var(--active-color);
-    transform: translateY(-2px);
-    background: var(--social-hover-bg);
+.entry-citation {
+    padding-bottom: 1rem;
+}
+
+.entry-citation:last-child {
+    padding-bottom: 0;
 }
 
 /* Publications Page Specifics */
@@ -654,7 +640,7 @@ details summary::marker {
     cursor: pointer;
     font-weight: 500;
     font-size: 14.5px;
-    color: var(--accent-color);
+    color: var(--accent-text);
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
     user-select: none;
@@ -687,7 +673,7 @@ details[open] > .publication-summary::after {
     content: '▼';
     font-size: 11px;
     margin-left: 10px;
-    color: var(--accent-color);
+    color: var(--accent-text);
     transition: transform 0.3s ease;
     display: inline-block;
     vertical-align: middle;
@@ -709,7 +695,7 @@ details[open] > .cv-summary::after {
 
 .publication-link {
     display: inline-block;
-    color: var(--accent-color);
+    color: var(--accent-text);
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -734,6 +720,37 @@ details[open] > .cv-summary::after {
 .publication-link:hover:after {
     width: 100%;
     background-color: var(--active-color);
+}
+
+.publication-authors strong {
+    color: var(--active-color);
+    font-weight: 600;
+}
+
+.publication-doi {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.publication-doi a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.publication-doi a:hover {
+    color: var(--active-color);
+}
+
+.publication-bibtex {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    font-size: 12.5px;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre;
+    user-select: all;
 }
 
 
@@ -785,10 +802,6 @@ details[open] > .cv-summary::after {
     .theme-toggle {
         margin-left: 0;
         padding: 0;
-    }
-
-    .skill-info {
-        max-width: 150px;
     }
 
     /* CV/Publications Responsive */
@@ -866,7 +879,7 @@ details[open] > .cv-summary::after {
 
 .project-category {
     font-size: 14px;
-    color: var(--accent-color);
+    color: var(--accent-text);
     margin-bottom: 15px;
     font-weight: 500;
 }
@@ -880,7 +893,7 @@ details[open] > .cv-summary::after {
 
 .project-link {
     display: inline-block;
-    color: var(--accent-color);
+    color: var(--accent-text);
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -1153,4 +1166,18 @@ details[open] > .cv-summary::after {
     letter-spacing: 0.5px;
     text-align: center;
 }
-
+
+/* Respect the OS "reduce motion" setting */
+@media (prefers-reduced-motion: reduce) {
+
+    .container,
+    .background span {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

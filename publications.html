@@ -4,41 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Marcelo Álvarez</title>
     <meta name="description" content="Research publications by Marcelo Álvarez on indoor CFD-ABS coupling, urban microclimate physics validation, funicular shape pre-evaluation, and generative vault modeling.">
     <meta name="author" content="Marcelo Álvarez">
     <meta property="og:title" content="Publications | Marcelo Álvarez">
     <meta property="og:description" content="Research publications in urban microclimate modeling and computational design by Marcelo Álvarez.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@400;500;600&display=swap">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        try {
+            var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { }
+    </script>
+    <script src="layout.js"></script>
 </head>
 
 <body>
-    <!-- Fixed Background -->
-    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Mobile Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html">About</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="publications.html" class="active">Publications</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <script>siteHeader();</script>
 
     <!-- Publications Content -->
     <div class="container">
@@ -50,8 +36,8 @@
                 <!-- Publication 1.1 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Spatiotemporal Modeling Integration Framework: Indoor Computational
-                        Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Asssessment</h2>
-                    <p class="publication-authors">Alvarez, M., Gomez, P., Swarts, M.</p>
+                        Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Assessment</h2>
+                    <p class="publication-authors"><strong>Alvarez, M.</strong>, Gomez, P., Swarts, M.</p>
                     <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
                     <p class="publication-year">2025</p>
                     <details class="publication-details">
@@ -96,6 +82,15 @@
                             The conclusion suggests the next steps to advance this area.
                         </p>
                     </details>
+                    <details class="publication-details">
+                        <summary class="publication-summary">BibTeX</summary>
+                        <pre class="publication-bibtex">@inproceedings{alvarez2025spatiotemporal,
+  title     = {Spatiotemporal Modeling Integration Framework: Indoor Computational Fluid Dynamics (CFD) and Agent-Based Simulation (ABS) Coupling Assessment},
+  author    = {Alvarez, Marcelo and Gomez-Zamora, Paula and Swarts, Matthew},
+  booktitle = {SIGraDi 2025: Meta Responsive Approaches},
+  year      = {2025}
+}</pre>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_234"
                         target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
@@ -105,7 +100,7 @@
                     <h2 class="publication-title">Airflow-Pathogen Spread Dynamics: A CFD-ABS approach to optimizing
                         ventilation and filtration
                         strategies to reduce risk</h2>
-                    <p class="publication-authors">Debnath, S., Yang, A., Alvarez, M., Gomez, P., Swarts, M.</p>
+                    <p class="publication-authors">Debnath, S., Yang, A., <strong>Alvarez, M.</strong>, Gomez, P., Swarts, M.</p>
                     <p class="publication-journal">SIGraDi 2025: Meta Responsive Approaches</p>
                     <p class="publication-year">2025</p>
                     <details class="publication-details">
@@ -134,6 +129,15 @@
                             concentration despite superspreader impact.
                         </p>
                     </details>
+                    <details class="publication-details">
+                        <summary class="publication-summary">BibTeX</summary>
+                        <pre class="publication-bibtex">@inproceedings{debnath2025airflow,
+  title     = {Airflow-Pathogen Spread Dynamics: A CFD-ABS Approach to Optimizing Ventilation and Filtration Strategies to Reduce Risk},
+  author    = {Debnath, Sharmista and Yang, Amy and Alvarez, Marcelo and Gomez-Zamora, Paula and Swarts, Matthew},
+  booktitle = {SIGraDi 2025: Meta Responsive Approaches},
+  year      = {2025}
+}</pre>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2025_284"
                         target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
@@ -142,9 +146,11 @@
                 <li class="publication-item">
                     <h2 class="publication-title">Coupled urban physics in microclimate modeling: Validating and
                         enhancing simulation tools</h2>
-                    <p class="publication-authors">Rahimi, S., Alvarez, M., Berardi, U., Stone, B., Kastner, P.</p>
+                    <p class="publication-authors">Rahimi, S., <strong>Alvarez, M.</strong>, Berardi, U., Stone, B., Kastner, P.</p>
                     <p class="publication-journal">Building and Environment</p>
                     <p class="publication-year">2025</p>
+                    <p class="publication-doi">DOI: <a href="https://doi.org/10.1016/j.buildenv.2025.113637" target="_blank"
+                            rel="noopener noreferrer">10.1016/j.buildenv.2025.113637</a></p>
                     <details class="publication-details">
                         <summary class="publication-summary">Abstract</summary>
                         <p class="publication-abstract">
@@ -173,6 +179,19 @@
                             more sustainable, climate resilient cities.
                         </p>
                     </details>
+                    <details class="publication-details">
+                        <summary class="publication-summary">BibTeX</summary>
+                        <pre class="publication-bibtex">@article{rahimi2025coupled,
+  title     = {Coupled urban physics in microclimate modeling: Validating and enhancing simulation tools},
+  author    = {Rahimi, Sina and Alvarez, Marcelo and Berardi, Umberto and Stone, Brian and Kastner, Patrick},
+  journal   = {Building and Environment},
+  volume    = {285},
+  pages     = {113637},
+  year      = {2025},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.buildenv.2025.113637}
+}</pre>
+                    </details>
                     <a href="https://www.sciencedirect.com/science/article/pii/S0360132325011084"
                         target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
@@ -180,9 +199,11 @@
                 <!-- Publication 3 -->
                 <li class="publication-item">
                     <h2 class="publication-title">Design Spaces of Structurally Pre-evaluated Funicular Shapes</h2>
-                    <p class="publication-authors">Alvarez, M., Bernal, M.</p>
+                    <p class="publication-authors"><strong>Alvarez, M.</strong>, Bernal, M.</p>
                     <p class="publication-journal">SIGraDi 2021: Designing Possibilities</p>
                     <p class="publication-year">2021</p>
+                    <p class="publication-doi">DOI: <a href="https://doi.org/10.5151/sigradi2021-276" target="_blank"
+                            rel="noopener noreferrer">10.5151/sigradi2021-276</a></p>
                     <details class="publication-details">
                         <summary class="publication-summary">Abstract</summary>
                         <p class="publication-abstract">
@@ -199,86 +220,66 @@
                             modeling during the early design stages.
                         </p>
                     </details>
+                    <details class="publication-details">
+                        <summary class="publication-summary">BibTeX</summary>
+                        <pre class="publication-bibtex">@inproceedings{alvarez2021design,
+  title     = {Design Spaces of Structurally Pre-evaluated Funicular Shapes},
+  author    = {{'A}lvarez, Marcelo and Bernal, Marcelo},
+  booktitle = {Blucher Design Proceedings (SIGraDi 2021)},
+  pages     = {807--818},
+  year      = {2021},
+  publisher = {Editora Blucher},
+  doi       = {10.5151/sigradi2021-276}
+}</pre>
+                    </details>
                     <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2021_64"
                         target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
                 <!-- Publication 4 -->
                 <li class="publication-item">
-                    <h2 class="publication-title">Generative modeling of vault-like structures through topological
-                        manipulations of meshes</h2>
-                    <p class="publication-authors">Alvarez, M., Bernal, M.</p>
+                    <h2 class="publication-title">Modeling technique for vault-like structure generation through
+                        topological manipulation</h2>
+                    <p class="publication-authors"><strong>Alvarez, M.</strong>, Bernal, M., Castro, C.</p>
                     <p class="publication-journal">SIGraDi 2020: Transformative Design</p>
                     <p class="publication-year">2020</p>
+                    <p class="publication-doi">DOI: <a href="https://doi.org/10.5151/sigradi2020-33" target="_blank"
+                            rel="noopener noreferrer">10.5151/sigradi2020-33</a></p>
                     <details class="publication-details">
                         <summary class="publication-summary">Abstract</summary>
                         <p class="publication-abstract">
-                            The design of shell structures has been focused mainly on the form-finding methods
-                            based on physical simulation. This paper proposes a modeling technique to generate a
-                            design space for vault-like structures using topological operations on coarse quad
-                            meshes. Unlike traditional form-finding methods, we propose a bottom-up approach
-                            relying on subdivision surfaces. We defined a set of rules to create a design space that a
-                            designer can explore. We implemented a tool as a plugin for Grasshopper/Rhinoceros. To
-                            test the tool, we explored design alternatives for a theoretical case study. The results
-                            show the capabilities of the tool to generate a design space of vault-like structures.
-                            Finally, we discussed the further steps to integrate structural analysis into the proposed
-                            modeling technique.
+                            This study is based on the development of a modeling technique for vault-like structure
+                            generation through topological manipulation. Currently, topology-driven form-finding has
+                            been implemented in tensile structures, but no further studies have been conducted for
+                            compression-only structures. The focus of this study is to approach the problem of highly
+                            determined vault shapes by their input topology. The technique operates at the topological
+                            level between vertices and edges to create an input 2D topology map. The particle-spring
+                            system uses such a map to simulate the resulting 3D mesh geometry. For testing purposes,
+                            we explore three generative approaches. The results show the effectiveness of the
+                            technique to manipulate the topological relationships that controls the generation of the
+                            funicular structures.
                         </p>
                     </details>
-                    <a href="https://papers.cumincad.org/cgi-bin/works/paper/sigradi2020_41"
+                    <details class="publication-details">
+                        <summary class="publication-summary">BibTeX</summary>
+                        <pre class="publication-bibtex">@inproceedings{alvarez2020modeling,
+  title     = {Modeling technique for vault-like structure generation through topological manipulation},
+  author    = {{\'A}lvarez, Marcelo and Bernal, Marcelo and Castro, Carlos},
+  booktitle = {Blucher Design Proceedings (SIGraDi 2020)},
+  pages     = {238--245},
+  year      = {2020},
+  publisher = {Editora Blucher},
+  doi       = {10.5151/sigradi2020-33}
+}</pre>
+                    </details>
+                    <a href="https://doi.org/10.5151/sigradi2020-33"
                         target="_blank" rel="noopener noreferrer" class="publication-link">View Publication</a>
                 </li>
 
             </ul>
         </div>
 
-        <div class="social-section">
-            <!-- Portfolio Button -->
-            <a href="https://alvarezdmarch.github.io/portfolio2/" target="_blank" rel="noopener noreferrer" class="portfolio-button">
-                Portfolio
-            </a>
-
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/alvarezdm/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/alvarezdmarch" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:alvarezdm.arch@gmail.com" aria-label="Email Contact">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-
-        <footer class="site-footer">
-            <p>© 2026 Marcelo Álvarez • Architect & Computational Designer</p>
-        </footer>
-    </div>
-
-
-    <div class="background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <script>siteFooter();</script>
     </div>
 
     <script src="theme.js"></script>

@@ -1,56 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('theme-toggle');
-    const toggleIcon = toggleButton.querySelector('i');
     const htmlElement = document.documentElement;
 
-    // Check for saved user preference, if any, on load of the website
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    if (currentTheme) {
-        htmlElement.setAttribute('data-theme', currentTheme);
-        updateIcon(currentTheme);
+    // The theme itself is applied by the inline script in <head> to avoid a flash.
+    // The sun/moon icons follow data-theme via CSS, so only the label needs updating here.
+    function currentTheme() {
+        return htmlElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     }
+
+    function updateLabel() {
+        toggleButton.setAttribute('aria-label',
+            currentTheme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+    }
+
+    updateLabel();
 
     toggleButton.addEventListener('click', function () {
-        if (htmlElement.getAttribute('data-theme') === 'light') {
-            htmlElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            updateIcon('dark');
-        } else {
-            htmlElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            updateIcon('light');
-        }
+        const newTheme = currentTheme() === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        try {
+            localStorage.setItem('theme', newTheme);
+        } catch (e) { }
+        updateLabel();
     });
 
-    function updateIcon(theme) {
-        if (theme === 'light') {
-            toggleIcon.classList.remove('fa-sun');
-            toggleIcon.classList.add('fa-moon');
-        } else {
-            toggleIcon.classList.remove('fa-moon');
-            toggleIcon.classList.add('fa-sun');
-        }
-    }
-
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (the bars/close icons follow aria-expanded via CSS)
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         });
     }
 });
-
